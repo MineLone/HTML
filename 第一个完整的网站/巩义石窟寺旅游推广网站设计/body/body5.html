@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>巩义石窟寺</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="../css/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../css/public.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="../css/denglu.css">
+<script type="text/javascript" src="../denglu/jquery.tools.pack.js"></script>
+<script src="../denglu/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<!--头-->
+<div class="head-pos">
+	<div id="nav_tab" class="head-bg">
+		<div class="head-logo2"></div>
+		<ul class="head-ul">
+			<li><a href="../main.html" >首页</a></li>
+			<li><a href="body1.html">石窟介绍</a></li>
+			<li><a href="body2.html" >历史文化</a></li>
+			<li class="head-logo"><span class="head-logo-mask"></span><!--span.head-logo-img--></li>
+			<li><a href="body3.html">艺术特点</a></li>
+			<li><a href="body4.html">在线服务</a></li>
+			<li><a href="body5.html" class="hover">关于我们</a></li>
+		</ul>
+		<div class="head-user"><a href="denglu.html" target="_blank"><i class="icon-user"></i>登录</a><span>|</span><a href="zhuce.html" target="_blank">注册</a></div>
+	</div>
+</div>
+<script>//智能浮动效果
+var obj = document.getElementById("nav_tab"), eq = 0;
+var top = getTop(obj);
+var isIE6 = /msie 6/i.test(navigator.userAgent);
+window.onscroll = function () {
+    var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    // console.log(bodyScrollTop);
+    //滚动的高度
+    var toph = 0;
+    if (bodyScrollTop > 80) {
+        $('#nav_tab').addClass('suspend');
+    } else {
+        $('#nav_tab').removeClass('suspend');
+    }
+    $('#nav_tab').height(bodyScrollTop > 100 ? 50 : 150 - bodyScrollTop);
+
+    // if (bodyScrollTop > top){
+    //     obj.style.position = (isIE6) ? "absolute" : "fixed";
+    //     obj.style.top = (isIE6) ? bodyScrollTop + "px" : "0px";
+    // } else {
+    //     obj.style.position = "static";
+    // }
+    // $(".detail-module").each(function(i){
+    //     var scrolltop=$(this).offset().top;
+    //     if( scrolltop-bodyScrollTop+$(this).height()-48>0){ //当前元素离body顶部的高-被滚动条卷去的高
+    //         eq=i;
+    //         return false;
+    //     }
+    // });
+};
+$('.ticket-menu li').on("mouseenter mouseleave", function (e) {
+    var w = $(this).width();
+    var h = $(this).height();
+    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+    var eventType = e.type;
+    var dirName = ['上方', '右侧', '下方', '左侧'];
+    let mask = $(this);
+    if (e.type === 'mouseenter') {
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        console.log('进', direction);
+        setTimeout(function () {
+            mask.addClass('hover');
+        }, 10);
+    } else {
+        console.log('出', direction);
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        setTimeout(function () {
+            mask.removeClass('hover');
+        }, 10);
+    }
+});
+</script>
+<!--头-->
+
+<div class="xuzhi-wai">
+	<div class="xuzhi-jiange"></div>
+		<div class="register_wrap">
+			<div class="xuzhi-jiange2"></div>
+			<div class="xuzhi-biaoti">---------- 关 于 我 们 ----------</div>
+			<div class="xuzhi-jiange3"></div>
+			<div class="guanyu-kuangjia">
+				<div class="guanyu-zw"> 	
+				  <p align="justify">&emsp;&emsp;作为一名专升本学生来说，本科生活的两年虽然不是很长，我也从中学到了很多专科时候学习不到的东西。在这紧张而美好的两年时间里认识了很多新朋友，开拓了视野，其中各个专业老师的学识让我佩服，不单单传授了许多丰富的专业知识，更教会了很多做事的道理，在此对所有的任课老师和辅导员老师表示诚挚的谢意。在即将毕业的时候，我首先就是要感谢我的毕业设计导师，在毕业设计的整个过程之中，从开始选题到开题报告的撰写，特别是毕业设计，导师全程监督指导，认真耐心。老师对我的每一个建议都让我收获颇丰，最重要的是老师的严谨治学的态度，耐心仔细的为我提出的每个问题进行解答，给了我极大的帮助，让我能更好的完成毕业的工作。
+在此我还要感谢大学期间所有的任课老师，你们无私的教书育人的态度让我钦佩。没有老师们的帮助我不可能顺利的完成大学的所有课程，并且以身作则，让我认识到为人师表应该担负的责任和义务。我还要感谢我的辅导员，在几年的大学学习和生活中给我了极大的帮助，让我成长。
+	      </p>
+				</div>
+			</div>
+		</div>
+	<div class="xuzhi-jiange"></div>
+</div>
+
+
+
+<!--脚-->
+<div class="foot-base">
+	<div class="foot-main">
+		<div class="foot-bz1">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma1"><img src="../images/foot/weibo1.png"></div>
+			</a>		</div>
+		<div class="foot-bz2">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma2"><img src="../images/foot/weixin1.png"></div>
+			</a>		</div>
+	</div>
+</div>
+<!--脚-->
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>巩义石窟寺</title>
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/main.css">
+<script type="text/javascript" src="../../css/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../css/public.js"></script>
+<script type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+//-->
+</script>
+</head>
+<body>
+
+<!--头-->
+<div class="head-pos">
+	<div id="nav_tab" class="head-bg">
+		<div class="head-logo2"></div>
+		<ul class="head-ul">
+			<li><a href="../../main.html" >首页</a></li>
+			<li><a href="../body1.html" class="hover">石窟介绍</a></li>
+			<li><a href="../body2.html"  >历史文化</a></li>
+			<li class="head-logo"><span class="head-logo-mask"></span><!--span.head-logo-img--></li>
+			<li><a href="../body3.html">艺术特点</a></li>
+			<li><a href="../body4.html" >在线服务</a></li>
+			<li><a href="../body5.html">关于我们</a></li>
+		</ul>
+		<div class="head-user"><a href="denglu.html"><i class="icon-user"></i>登录</a><span>|</span><a href="zhuce.html">注册</a></div>
+	</div>
+</div>
+<script>//智能浮动效果
+var obj = document.getElementById("nav_tab"), eq = 0;
+var top = getTop(obj);
+var isIE6 = /msie 6/i.test(navigator.userAgent);
+window.onscroll = function () {
+    var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    // console.log(bodyScrollTop);
+    //滚动的高度
+    var toph = 0;
+    if (bodyScrollTop > 80) {
+        $('#nav_tab').addClass('suspend');
+    } else {
+        $('#nav_tab').removeClass('suspend');
+    }
+    $('#nav_tab').height(bodyScrollTop > 100 ? 50 : 150 - bodyScrollTop);
+
+    // if (bodyScrollTop > top){
+    //     obj.style.position = (isIE6) ? "absolute" : "fixed";
+    //     obj.style.top = (isIE6) ? bodyScrollTop + "px" : "0px";
+    // } else {
+    //     obj.style.position = "static";
+    // }
+    // $(".detail-module").each(function(i){
+    //     var scrolltop=$(this).offset().top;
+    //     if( scrolltop-bodyScrollTop+$(this).height()-48>0){ //当前元素离body顶部的高-被滚动条卷去的高
+    //         eq=i;
+    //         return false;
+    //     }
+    // });
+};
+$('.ticket-menu li').on("mouseenter mouseleave", function (e) {
+    var w = $(this).width();
+    var h = $(this).height();
+    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+    var eventType = e.type;
+    var dirName = ['上方', '右侧', '下方', '左侧'];
+    let mask = $(this);
+    if (e.type === 'mouseenter') {
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        console.log('进', direction);
+        setTimeout(function () {
+            mask.addClass('hover');
+        }, 10);
+    } else {
+        console.log('出', direction);
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        setTimeout(function () {
+            mask.removeClass('hover');
+        }, 10);
+    }
+});
+</script>
+<!--头-->
+
+<!--main-->
+
+<div class="fuwu-banner"></div>
+<div class="jieshao-wai">
+	<div class="shiku3-kuang">
+	<div class="shiku-lie1" ><a href="shiku2.html"><img src="../../images/body1/jiantou1.gif" width="150" height="150" border="0" /></a></div>
+	<div class="shiku-lie2" >
+	
+	<div class="fuwu-jiange1"> </div>
+	<div class="xuzhi-biaoti"><img src="../../images/body1/3.png" /></div>
+	<div class="fuwu-jiange"> </div>
+	
+	<div class="jieshao-shiku3">
+	  <div class="jieshao-shiku3-kj">
+			<div class="jieshao-shiku3-tu" style="float:left">
+			  <p><img src="../../images/3/01.jpg"  width="100%" /></p>
+			</div>
+			<div class="jieshao-shiku3-zw" >
+			  <div align="justify">	 &emsp;&emsp;第三窟最引人注目的是中心柱上的这对飞天，它以生动自然、轻盈灵秀而闻名于世，是飞天雕刻中的代表作。飞天起源于古印度佛教经典，它是自由快乐的天神，通过跳舞、演奏音乐、焚香散花来侍奉佛祖。您看，这对飞天一手拿着莲花枝，一手托着莲花蕾，体态修长、薄纱透体，飘带自脖后绕至两肩前再翻到腋下向后飘扬，给人一种非常强烈的飞翔感。第三石窟与第二石窟，由其构造判断，殆为同一人之作品，中央方柱之每面作有三尊佛、两罗汉等之佛龛，四面壁上并雕有千体佛像、奏乐天人及供养行列等。</div>
+			</div>
+		</div>
+	</div>
+	<div class="xuzhi-jiange3"> </div>
+	
+	<div class="jieshao-shiku1-tu1"><img src="../../images/banner1.jpg" width="100%" /></div>
+	<div class="xuzhi-jiange3"> </div>
+	
+	</div>
+	<div class="shiku-lie3" ><a href="shiku4.html"><img src="../../images/body1/jiantou2.gif" width="150" height="150" border="0" /></a></div>
+	</div>
+	</div>
+</div>
+<!--main-->
+
+<!--脚-->
+<div class="foot-base">
+	<div class="foot-main">
+		<div class="foot-bz1">
+			<a href="#"><img src="../../images/foot/weibo.png"/><div class="foot-ma1"><img src="../../images/foot/weibo1.png"></div>
+			</a>		</div>
+		<div class="foot-bz2">
+			<a href="#"><img src="../../images/foot/weibo.png"/><div class="foot-ma2"><img src="../../images/foot/weixin1.png"></div>
+			</a>		</div>
+	</div>
+</div>
+<!--脚-->
+</body>
+</html>

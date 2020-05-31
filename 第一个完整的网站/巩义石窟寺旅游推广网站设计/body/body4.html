@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>巩义石窟寺</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="../css/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../css/public.js"></script>
+<script type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+<body onload="MM_preloadImages('../images/chakan2.png')">
+
+<!--头-->
+<div class="head-pos">
+	<div id="nav_tab" class="head-bg">
+		<div class="head-logo2"></div>
+		<ul class="head-ul">
+			<li><a href="../main.html" >首页</a></li>
+			<li><a href="body1.html">石窟介绍</a></li>
+			<li><a href="body2.html" >历史文化</a></li>
+			<li class="head-logo"><span class="head-logo-mask"></span><!--span.head-logo-img--></li>
+			<li><a href="body3.html">艺术特点</a></li>
+			<li><a href="body4.html" class="hover">在线服务</a></li>
+			<li><a href="body5.html">关于我们</a></li>
+		</ul>
+		<div class="head-user"><a href="denglu.html" target="_blank"><i class="icon-user"></i>登录</a><span>|</span><a href="zhuce.html" target="_blank">注册</a></div>
+	</div>
+</div>
+<script>//智能浮动效果
+var obj = document.getElementById("nav_tab"), eq = 0;
+var top = getTop(obj);
+var isIE6 = /msie 6/i.test(navigator.userAgent);
+window.onscroll = function () {
+    var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    // console.log(bodyScrollTop);
+    //滚动的高度
+    var toph = 0;
+    if (bodyScrollTop > 80) {
+        $('#nav_tab').addClass('suspend');
+    } else {
+        $('#nav_tab').removeClass('suspend');
+    }
+    $('#nav_tab').height(bodyScrollTop > 100 ? 50 : 150 - bodyScrollTop);
+
+    // if (bodyScrollTop > top){
+    //     obj.style.position = (isIE6) ? "absolute" : "fixed";
+    //     obj.style.top = (isIE6) ? bodyScrollTop + "px" : "0px";
+    // } else {
+    //     obj.style.position = "static";
+    // }
+    // $(".detail-module").each(function(i){
+    //     var scrolltop=$(this).offset().top;
+    //     if( scrolltop-bodyScrollTop+$(this).height()-48>0){ //当前元素离body顶部的高-被滚动条卷去的高
+    //         eq=i;
+    //         return false;
+    //     }
+    // });
+};
+$('.ticket-menu li').on("mouseenter mouseleave", function (e) {
+    var w = $(this).width();
+    var h = $(this).height();
+    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+    var eventType = e.type;
+    var dirName = ['上方', '右侧', '下方', '左侧'];
+    let mask = $(this);
+    if (e.type === 'mouseenter') {
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        console.log('进', direction);
+        setTimeout(function () {
+            mask.addClass('hover');
+        }, 10);
+    } else {
+        console.log('出', direction);
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        setTimeout(function () {
+            mask.removeClass('hover');
+        }, 10);
+    }
+});
+</script>
+<!--头-->
+
+<!--main-->
+
+<div class="fuwu-banner">
+</div>
+
+
+
+<div class="fuwu-wai">
+	<div class="fuwu-jiange"> </div>
+	<div class="xuzhi-biaoti"><img src="../images/body4/1.png" /></div>
+	<div class="fuwu-jiange"> </div>
+	<div class="fuwu-jiage"> <img src="../images/jiage.png" /> </div>
+	<div class="fuwu-jiange"> </div>
+	<div class="fuwu-kuangjia">
+		<div class="fuwu-tu1" style="float: left" >	<a href="xuzhi.html"><img src="../images/shiku1.png" / width="100%" height="100%" border="0"></a> </div>
+		<div class="fuwu-zi" style="float: left">
+			<div class="fuwu-biaoti" ><div align="left"><a href="xuzhi.html">预订须知</a></div>
+			</div>
+			<div class="fuwu-zw" >
+			  <div align="justify"><a href="xuzhi.html">优待政策
+1、免费政策：1.4米（含）以下免票；70岁（含）以上老人凭相关证件免费，现役军人持军官证免票，残疾人持残疾证，新闻记者持记者证免票，详情点击查看.....</a></div>
+			</div>
+			<div class="fuwu-aj" ><div align="right"><a href="xuzhi.html" target="_blank"><img src="../images/chakan1.png" name="Image3" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','../images/chakan2.png',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+			</div>
+		</div>
+	</div>
+	<div class="fuwu-jiange"> </div>
+	<div class="fuwu-kuangjia">
+		<div class="fuwu-tu2" style="float: left" >	<a href="body4.html"><img src="../images/zaixian/01.png" width="100%" height="100%" border="0" onclick="MM_popupMsg('注意!即将打开第三方网站。。。');MM_openBrWindow('https://piao.ctrip.com/ticket/dest/t20816.html?allianceid=866656&amp;sid=1435004','','')"  /></a> </div>
+		<div class="fuwu-zi" style="float: left">
+			<div class="fuwu-biaoti" >
+			  <div align="left"><a href="body4.html" onclick="MM_popupMsg('注意!即将打开第三方网站。。。');MM_openBrWindow('https://piao.ctrip.com/ticket/dest/t20816.html?allianceid=866656&amp;sid=1435004','','')">在线购票</a></div>
+			</div>
+			<div class="fuwu-zw" >
+			  <div align="justify"><a href="body4.html" onclick="MM_popupMsg('注意!即将打开第三方网站。。。');MM_openBrWindow('https://piao.ctrip.com/ticket/dest/t20816.html?allianceid=866656&amp;sid=1435004','','')" >携程景点门票频道为用户提供巩义石窟寺预订服务,并且为用户提供巩义石窟寺信息介绍,景点交通,景点附近酒店以及用户真实的点评信息,并且定期推出.......</a></div>
+			</div>
+			<div class="fuwu-aj" ><div align="right"><a href="body4.html"><img src="../images/chakan1.png" name="Image4" border="0" id="Image4" onclick="MM_popupMsg('注意!即将打开第三方网站。。。');MM_openBrWindow('https://piao.ctrip.com/ticket/dest/t20816.html?allianceid=866656&amp;sid=1435004','','')" onmouseover="MM_swapImage('Image4','','../images/chakan2.png','Image4','','../images/chakan2.png',1)" onmouseout="MM_swapImgRestore()" /></a>
+			</div>
+			</div>
+		</div>
+	</div>	
+	
+	<div class="fuwu-jiange"> </div>
+	<div class="fuwu-kuangjia">
+		<div class="fuwu-tu3" style="float: left" >	<a href="https://map.baidu.com/search/%E5%B7%A9%E4%B9%89%E7%9F%B3%E7%AA%9F%E5%AF%BA%E6%97%85%E6%B8%B8%E6%99%AF%E5%8C%BA/@12582711.572857315,4115411.7752900003,15.55z?querytype=s&amp;da_src=shareurl&amp;wd=%E5%B7%A9%E4%B9%89%E7%9F%B3%E7%AA%9F%E5%AF%BA%E6%97%85%E6%B8%B8%E6%99%AF%E5%8C%BA&amp;c=268&amp;src=0&amp;wd2=%E5%B7%A9%E4%B9%89&amp;pn=0&amp;sug=1&amp;l=15&amp;b=(12579033.533392845,4113401.801091627;12585943.540996509,4117408.9494883725)&amp;from=webmap&amp;biz_forward={%22scaler%22:1,%22styles%22:%22pl%22}&amp;device_ratio=1" target="_blank"><img src="../images/zaixian/02.png" width="100%" height="100%" border="0"  /></a> </div>
+		<div class="fuwu-zi" style="float: left">
+			<div class="fuwu-biaoti" >
+			  <div align="left"><a href="https://map.baidu.com/search/%E5%B7%A9%E4%B9%89%E7%9F%B3%E7%AA%9F%E5%AF%BA%E6%97%85%E6%B8%B8%E6%99%AF%E5%8C%BA/@12582711.572857315,4115411.7752900003,15.55z?querytype=s&amp;da_src=shareurl&amp;wd=%E5%B7%A9%E4%B9%89%E7%9F%B3%E7%AA%9F%E5%AF%BA%E6%97%85%E6%B8%B8%E6%99%AF%E5%8C%BA&amp;c=268&amp;src=0&amp;wd2=%E5%B7%A9%E4%B9%89&amp;pn=0&amp;sug=1&amp;l=15&amp;b=(12579033.533392845,4113401.801091627;12585943.540996509,4117408.9494883725)&amp;from=webmap&amp;biz_forward={%22scaler%22:1,%22styles%22:%22pl%22}&amp;device_ratio=1" target="_blank">交通指南</a></div>
+			</div>
+			<div class="fuwu-zw" >
+			  <div align="justify"><a href="https://map.baidu.com/search/%E5%B7%A9%E4%B9%89%E7%9F%B3%E7%AA%9F%E5%AF%BA%E6%97%85%E6%B8%B8%E6%99%AF%E5%8C%BA/@12582711.572857315,4115411.7752900003,15.55z?querytype=s&amp;da_src=shareurl&amp;wd=%E5%B7%A9%E4%B9%89%E7%9F%B3%E7%AA%9F%E5%AF%BA%E6%97%85%E6%B8%B8%E6%99%AF%E5%8C%BA&amp;c=268&amp;src=0&amp;wd2=%E5%B7%A9%E4%B9%89&amp;pn=0&amp;sug=1&amp;l=15&amp;b=(12579033.533392845,4113401.801091627;12585943.540996509,4117408.9494883725)&amp;from=webmap&amp;biz_forward={%22scaler%22:1,%22styles%22:%22pl%22}&amp;device_ratio=1" target="_blank">自驾：从巩义站向东北方向出发，沿孝康路行驶180米，到达终点巩义石窟寺(在道路左侧)。
+			  公交：在巩义市区宋永昭陵南门乘旅游公交车可达。......</a></div>
+			</div>
+			<div class="fuwu-aj" ><div align="right"><a href="https://map.baidu.com/search/巩义石窟寺旅游景区/@12582711.572857315,4115411.7752900003,15.55z?querytype=s&amp;da_src=shareurl&amp;wd=巩义石窟寺旅游景区&amp;c=268&amp;src=0&amp;wd2=巩义&amp;pn=0&amp;sug=1&amp;l=15&amp;b=(12579033.533392845,4113401.801091627;12585943.540996509,4117408.9494883725)&amp;from=webmap&amp;biz_forward={&quot;scaler&quot;:1,&quot;styles&quot;:&quot;pl&quot;}&amp;device_ratio=1" target="_blank"><img src="../images/chakan1.png" name="Image5" border="0" id="Image5" onmouseover="MM_swapImage('Image5','','../images/chakan2.png',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+			</div>
+		</div>
+	</div>	
+	<div class="fuwu-jiange"> </div>
+</div>
+<!--main-->
+
+
+
+
+<!--脚-->
+<div class="foot-base">
+	<div class="foot-main">
+		<div class="foot-bz1">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma1"><img src="../images/foot/weibo1.png"></div>
+			</a>		</div>
+		<div class="foot-bz2">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma2"><img src="../images/foot/weixin1.png"></div>
+			</a>		</div>
+	</div>
+</div>
+<!--脚-->
+</body>
+</html>

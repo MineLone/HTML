@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>巩义石窟寺</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="../css/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../css/public.js"></script>
+<script type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+<body onload="MM_preloadImages('../images/anjian2.png')">
+
+<!--头-->
+<div class="head-pos">
+	<div id="nav_tab" class="head-bg">
+		<div class="head-logo2"></div>
+		<ul class="head-ul">
+			<li><a href="../main.html" >首页</a></li>
+			<li><a href="body1.html" >石窟介绍</a></li>
+			<li><a href="body2.html" >历史文化</a></li>
+			<li class="head-logo"><span class="head-logo-mask"></span><!--span.head-logo-img--></li>
+			<li><a href="body3.html" class="hover">艺术特点</a></li>
+			<li><a href="body4.html">在线服务</a></li>
+			<li><a href="body5.html">关于我们</a></li>
+		</ul>
+		<div class="head-user"><a href="denglu.html" target="_blank"><i class="icon-user"></i>登录</a><span>|</span><a href="zhuce.html" target="_blank">注册</a></div>
+	</div>
+</div>
+<script>//智能浮动效果
+var obj = document.getElementById("nav_tab"), eq = 0;
+var top = getTop(obj);
+var isIE6 = /msie 6/i.test(navigator.userAgent);
+window.onscroll = function () {
+    var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    // console.log(bodyScrollTop);
+    //滚动的高度
+    var toph = 0;
+    if (bodyScrollTop > 80) {
+        $('#nav_tab').addClass('suspend');
+    } else {
+        $('#nav_tab').removeClass('suspend');
+    }
+    $('#nav_tab').height(bodyScrollTop > 100 ? 50 : 150 - bodyScrollTop);
+
+    // if (bodyScrollTop > top){
+    //     obj.style.position = (isIE6) ? "absolute" : "fixed";
+    //     obj.style.top = (isIE6) ? bodyScrollTop + "px" : "0px";
+    // } else {
+    //     obj.style.position = "static";
+    // }
+    // $(".detail-module").each(function(i){
+    //     var scrolltop=$(this).offset().top;
+    //     if( scrolltop-bodyScrollTop+$(this).height()-48>0){ //当前元素离body顶部的高-被滚动条卷去的高
+    //         eq=i;
+    //         return false;
+    //     }
+    // });
+};
+$('.ticket-menu li').on("mouseenter mouseleave", function (e) {
+    var w = $(this).width();
+    var h = $(this).height();
+    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+    var eventType = e.type;
+    var dirName = ['上方', '右侧', '下方', '左侧'];
+    let mask = $(this);
+    if (e.type === 'mouseenter') {
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        console.log('进', direction);
+        setTimeout(function () {
+            mask.addClass('hover');
+        }, 10);
+    } else {
+        console.log('出', direction);
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        setTimeout(function () {
+            mask.removeClass('hover');
+        }, 10);
+    }
+});
+</script>
+<!--头-->
+
+<!--main-->
+<div class="yishu-banner"></div>
+
+
+
+<div class="yishu-wai">
+  <div class="yishu-jiange"> </div>
+	<div class="yishu-h">
+		<div class="yishu-hb-kj">
+			<div class="yishu-hb-yt" style="float:left"><img src="../images/body3/yishu1.png" width="100%" /></div>
+			<div class="yishu-hb-zk" style="float:right">
+			  	<div class="yishu-hb-zk-xbt" ><div style="color: #A90312" >莲花藻井</div></div>
+				<div class="yishu-hb-zk-zw" >
+					<div >&emsp;&emsp;窟顶莲花藻井的雕刻：中间一朵盛开的大莲花，周围环绕着六身飞天，手持供品，衣裙翻转，构图别致，雕刻精美，北京人民大会堂的葵花顶就是根据这个莲花顶设计的。方形藻井在第五窟窟顶，井中心是一个特大的莲花，周围环绕六个凌空<a target="_blank" href="https://baike.baidu.com/item/%E9%AB%98%E7%BF%94">高翔</a>的飞天，四角有图案化的化生佛并间有忍冬。整个藻井是以莲花为主题，构图匀称，美观大方。</div>
+				</div>
+				<div class="yishu-aj" >
+					<div align="right">
+						<a href="yishu/yishu1.html"><img src="../images/anjian1.png" name="Image31" border="0" id="Image31" onmouseover="MM_swapImage('Image31','','../images/anjian2.png',1)" onmouseout="MM_swapImgRestore()" /></a>					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="yishu-gb">
+		<div class="yishu-gb-biaoti"><img src="../images/body3/1.png" /></div>
+		<div class="yishu-gb-kj-jg"> </div>
+		<div class="yishu-gb-kj">
+			<div class="yishu-gb-hang">
+				<div class="yishu-gb-hang-tu1" ><a href="yishu/yishu1.html"><img src="../images/yishu/01.png"  width="100%" height="100%"  /></a></div>
+				<div class="yishu-gb-hang-tu1" ><a href="yishu/yishu2.html"><img src="../images/yishu/02.png"  width="100%" border="0" height="100%" /></a></div>
+				<div class="yishu-gb-hang-tu2" ><a href="yishu/yishu3.html"><img src="../images/yishu/03.png"  width="100%" border="0" height="100%" /></a></div>
+			</div>
+		</div>
+		<div class="yishu-jiange"> </div>	
+			<div class="yishu-gb-hang">
+				<div class="yishu-gb-hang-tu1" ><a href="yishu/yishu4.html"><img src="../images/yishu/04.png"  width="100%" border="0" height="100%" /></a></div>
+				<div class="yishu-gb-hang-tu1" ><a href="yishu/yishu5.html"><img src="../images/yishu/05.png"  width="100%" border="0" height="100%" /></a></div>
+				<div class="yishu-gb-hang-tu2" ><a href="yishu/yishu6.html"><img src="../images/yishu/06.png"  width="100%" border="0" height="100%" /></a></div>
+			</div>
+		<div class="yishu-jiange"> </div>
+			<div class="yishu-gb-hang">
+				<div class="yishu-gb-hang-tu1" ><a href="yishu/yishu7.html"><img src="../images/yishu/07.png"  width="100%" height="100%"  /></a></div>
+				<div class="yishu-gb-hang-tu1" ><a href="yishu/yishu8.html"><img src="../images/yishu/08.png"  width="100%" height="100%"  /></a></div>
+				<div class="yishu-gb-hang-tu2" ><a href="yishu/yishu9.html"><img src="../images/yishu/09.png"  width="100%" height="100%"  /></a></div>
+			</div>
+		<div class="yishu-jiange"> </div>
+	</div>
+</div>	
+<!--main-->
+
+
+<!--脚-->
+<div class="foot-base">
+	<div class="foot-main">
+		<div class="foot-bz1">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma1"><img src="../images/foot/weibo1.png"></div>
+			</a>		</div>
+		<div class="foot-bz2">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma2"><img src="../images/foot/weixin1.png"></div>
+			</a>		</div>
+	</div>
+</div>
+<!--脚-->
+</body>
+</html>

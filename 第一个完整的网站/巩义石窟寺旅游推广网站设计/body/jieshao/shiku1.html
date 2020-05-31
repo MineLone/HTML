@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>巩义石窟寺</title>
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/main.css">
+<script type="text/javascript" src="../../css/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../css/public.js"></script>
+<script type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+//-->
+</script>
+</head>
+<body>
+
+<!--头-->
+<div class="head-pos">
+	<div id="nav_tab" class="head-bg">
+		<div class="head-logo2"></div>
+		<ul class="head-ul">
+			<li><a href="../../main.html" >首页</a></li>
+			<li><a href="../body1.html" class="hover">石窟介绍</a></li>
+			<li><a href="../body2.html"  >历史文化</a></li>
+			<li class="head-logo"><span class="head-logo-mask"></span><!--span.head-logo-img--></li>
+			<li><a href="../body3.html">艺术特点</a></li>
+			<li><a href="../body4.html" >在线服务</a></li>
+			<li><a href="../body5.html">关于我们</a></li>
+		</ul>
+		<div class="head-user"><a href="denglu.html"><i class="icon-user"></i>登录</a><span>|</span><a href="zhuce.html">注册</a></div>
+	</div>
+</div>
+<script>//智能浮动效果
+var obj = document.getElementById("nav_tab"), eq = 0;
+var top = getTop(obj);
+var isIE6 = /msie 6/i.test(navigator.userAgent);
+window.onscroll = function () {
+    var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    // console.log(bodyScrollTop);
+    //滚动的高度
+    var toph = 0;
+    if (bodyScrollTop > 80) {
+        $('#nav_tab').addClass('suspend');
+    } else {
+        $('#nav_tab').removeClass('suspend');
+    }
+    $('#nav_tab').height(bodyScrollTop > 100 ? 50 : 150 - bodyScrollTop);
+
+    // if (bodyScrollTop > top){
+    //     obj.style.position = (isIE6) ? "absolute" : "fixed";
+    //     obj.style.top = (isIE6) ? bodyScrollTop + "px" : "0px";
+    // } else {
+    //     obj.style.position = "static";
+    // }
+    // $(".detail-module").each(function(i){
+    //     var scrolltop=$(this).offset().top;
+    //     if( scrolltop-bodyScrollTop+$(this).height()-48>0){ //当前元素离body顶部的高-被滚动条卷去的高
+    //         eq=i;
+    //         return false;
+    //     }
+    // });
+};
+$('.ticket-menu li').on("mouseenter mouseleave", function (e) {
+    var w = $(this).width();
+    var h = $(this).height();
+    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+    var eventType = e.type;
+    var dirName = ['上方', '右侧', '下方', '左侧'];
+    let mask = $(this);
+    if (e.type === 'mouseenter') {
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        console.log('进', direction);
+        setTimeout(function () {
+            mask.addClass('hover');
+        }, 10);
+    } else {
+        console.log('出', direction);
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        setTimeout(function () {
+            mask.removeClass('hover');
+        }, 10);
+    }
+});
+</script>
+<!--头-->
+
+<!--main-->
+
+<div class="fuwu-banner"></div>
+<div class="jieshao-wai">
+	<div class="shiku1-kuang">
+		<div class="shiku-lie0" ><img src="../../images/body1/jiantou1.gif" width="150" height="150" border="0" /></div>
+		<div class="shiku-lie2" >
+			<div class="fuwu-jiange1"> </div>
+			<div class="xuzhi-biaoti"><img src="../../images/body1/1.png" /></div>
+			<div class="jieshao-shiku1">
+				<div class="jieshao-shiku1-kj">
+					<div class="jieshao-shiku1-tu" style="float:left">
+					  <p><img src="../../images/1/10.jpg"  width="100%" /></p>
+					  <p>&nbsp;</p>
+					  <p><img src="../../images/1/07.jpg" width="100%" /></p>
+					</div>
+					<div class="jieshao-shiku1-zw" >
+					<p align="justify" >&emsp;&emsp;第一石窟为正方形，高、阔各6米。门内两侧雕有“帝后礼佛图”，余三壁雕佛像和佛传故事。于壁角雕神王、怪兽、乐伎等。左侧三幅是皇帝礼佛图，右侧三幅是皇后礼佛图。帝后礼佛图分为三层六组，每层由比丘和比丘尼作前导，帝后、侍从，前呼后拥，反映皇室之宗教信仰。帝、后身后跟着文武大臣和成群的嫔妃，帝后皆有侍女搀扶，前有僧人导引。礼佛图构图协调，刀法熟练，造型逼真，充分表现了工匠巧夺天工的艺术技巧。正中有一根方柱，四面雕有佛龛。龛内各雕有一佛、二弟子、二菩萨。佛座下面最小，两侧有一对石狮子，蹲伏披毛，形象逼真。佛像的背光刻有火焰纹，两侧有对称的飞天、化生和莲花。弹琵琶、横吹笛的会乐飞天，生动活泼，栩栩如生，构成以佛为主的对称协调的成组石雕。方柱的基座每面都雕有力士，力士下面雕有姿态各异的神王。方柱上端每面都有化生、莲花和垂鳞纹、彩铃、飘带组成的垂幔，刻工精细，美丽而庄重。此等雕像多已破损，且经后世加塑补彩，大抵失去本来面目，然其构图简练生动，是我国现存浮雕中较为完整者。</p>
+				  </div>
+				</div>
+			</div>
+				<div class="jieshao-shiku1-tu1" style="float:left"><img src="../../images/1/15.jpg" width="100%"/></div>
+		</div>
+		<div class="shiku-lie3" ><a href="shiku2.html"><img src="../../images/body1/jiantou2.gif" width="150" height="150" border="0" /></a></div>
+	</div>
+</div>
+<!--main-->
+
+<!--脚-->
+<div class="foot-base">
+	<div class="foot-main">
+		<div class="foot-bz1">
+			<a href="#"><img src="../../images/foot/weibo.png"/><div class="foot-ma1"><img src="../../images/foot/weibo1.png"></div>
+			</a>		</div>
+		<div class="foot-bz2">
+			<a href="#"><img src="../../images/foot/weibo.png"/><div class="foot-ma2"><img src="../../images/foot/weixin1.png"></div>
+			</a>		</div>
+	</div>
+</div>
+<!--脚-->
+</body>
+</html>

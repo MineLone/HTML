@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>巩义石窟寺</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="../css/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../css/public.js"></script>
+<script type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+<body onload="MM_preloadImages('../images/chakan2.png')">
+
+<!--头-->
+<div class="head-pos">
+	<div id="nav_tab" class="head-bg">
+		<div class="head-logo2"></div>
+		<ul class="head-ul">
+			<li><a href="../main.html" >首页</a></li>
+			<li><a href="body1.html" class="hover">石窟介绍</a></li>
+			<li><a href="body2.html" >历史文化</a></li>
+			<li class="head-logo"><span class="head-logo-mask"></span><!--span.head-logo-img--></li>
+			<li><a href="body3.html">艺术特点</a></li>
+			<li><a href="body4.html">在线服务</a></li>
+			<li><a href="body5.html">关于我们</a></li>
+		</ul>
+		<div class="head-user"><a href="denglu.html" target="_blank"><i class="icon-user"></i>登录</a><span>|</span><a href="zhuce.html" target="_blank">注册</a></div>
+	</div>
+</div>
+<script>//智能浮动效果
+var obj = document.getElementById("nav_tab"), eq = 0;
+var top = getTop(obj);
+var isIE6 = /msie 6/i.test(navigator.userAgent);
+window.onscroll = function () {
+    var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    // console.log(bodyScrollTop);
+    //滚动的高度
+    var toph = 0;
+    if (bodyScrollTop > 80) {
+        $('#nav_tab').addClass('suspend');
+    } else {
+        $('#nav_tab').removeClass('suspend');
+    }
+    $('#nav_tab').height(bodyScrollTop > 100 ? 50 : 150 - bodyScrollTop);
+
+    // if (bodyScrollTop > top){
+    //     obj.style.position = (isIE6) ? "absolute" : "fixed";
+    //     obj.style.top = (isIE6) ? bodyScrollTop + "px" : "0px";
+    // } else {
+    //     obj.style.position = "static";
+    // }
+    // $(".detail-module").each(function(i){
+    //     var scrolltop=$(this).offset().top;
+    //     if( scrolltop-bodyScrollTop+$(this).height()-48>0){ //当前元素离body顶部的高-被滚动条卷去的高
+    //         eq=i;
+    //         return false;
+    //     }
+    // });
+};
+$('.ticket-menu li').on("mouseenter mouseleave", function (e) {
+    var w = $(this).width();
+    var h = $(this).height();
+    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+    var eventType = e.type;
+    var dirName = ['上方', '右侧', '下方', '左侧'];
+    let mask = $(this);
+    if (e.type === 'mouseenter') {
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        console.log('进', direction);
+        setTimeout(function () {
+            mask.addClass('hover');
+        }, 10);
+    } else {
+        console.log('出', direction);
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        setTimeout(function () {
+            mask.removeClass('hover');
+        }, 10);
+    }
+});
+</script>
+<!--头-->
+
+<!--main-->
+
+<div class="jieshao-banner"></div>
+
+
+<div class="jieshao-wai">
+	<div class="jieshao-jiange"> </div>
+	<div class="jieshao-kuangjia">
+		<div class="jieshao-tu1" style="float: left" >	<a href="jieshao/shiku1.html" target="_blank"><img src="../images/shiku/ku1.png" border="0" /></a> </div>
+		<div class="jieshao-zi" style="float: left">
+			<div class="jieshao-biaoti" ><div align="left"><a href="jieshao/shiku1.html" target="_blank">第一石窟</a></div>
+			</div>
+			<div class="jieshao-zw" >
+			  <div align="justify"><a href="jieshao/shiku1.html" target="_blank">第一石窟为正方形，高、阔各6米。门内两侧雕有“帝后礼佛图”，余三壁雕佛像和佛传故事。于壁角雕神王、怪兽、乐伎等。左侧三幅是皇帝礼佛图，右侧三幅是皇后礼佛图。帝后礼佛图分为。。。。。。</a></div>
+			</div>
+			<div class="jieshao-aj" ><div align="right"><a href="jieshao/shiku1.html" target="_blank"><img src="../images/chakan1.png" name="Image11" border="0" id="Image11" onmouseover="MM_swapImage('Image11','','../images/chakan2.png',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+			</div>
+		</div>
+	</div>
+	<div class="jieshao-jiange"> </div>
+	<div class="jieshao-kuangjia">
+		<div class="jieshao-tu2" style="float: left" ><a href="jieshao/shiku2.html" target="_blank"><img src="../images/shiku/ku2.png" border="0" /></a> </div>
+		<div class="jieshao-zi" style="float: left">
+			<div class="jieshao-biaoti" ><div align="left"><a href="jieshao/shiku2.html" target="_blank">第二石窟</a></div>
+			</div>
+			<div class="jieshao-zw" ><div align="justify"><a href="jieshao/shiku2.html" target="_blank">第二窟为一尚未完工的窟穴。东壁有三个佛龛，是北魏初期的作品。龛内雕一佛、二弟子、二菩萨、二力士，座下刻二狮子。中心方柱南面从上到下开凿三个佛龛，最下面的一个较大的为唐代。。。。。。</a></div>
+			</div>
+			<div class="jieshao-aj" ><div align="right"><a href="jieshao/shiku2.html" target="_blank"><img src="../images/chakan1.png" name="Image12"  border="0" id="Image12" onmouseover="MM_swapImage('Image12','','../images/chakan2.png',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+			</div>
+		</div>
+	</div>	
+	<div class="jieshao-jiange"> </div>
+	<div class="jieshao-kuangjia">
+		<div class="jieshao-tu3" style="float: left" ><a href="jieshao/shiku3.html" target="_blank"><img src="../images/shiku/ku3.png" border="0" /></a> </div>
+		<div class="jieshao-zi" style="float: left">
+			<div class="jieshao-biaoti" ><div align="left"><a href="jieshao/shiku3.html" target="_blank">第三石窟</a></div>
+			</div>
+			<div class="jieshao-zw" ><div align="justify"><a href="jieshao/shiku3.html" target="_blank">第三石窟与第二石窟，由其构造判断，殆为同一人之作品，中央方柱之每面作有三尊佛、两罗汉等之佛龛，四面壁上并雕有千体佛像、奏乐天人及供养行列等。。。。。。</a></div>
+			</div>
+			<div class="jieshao-aj" ><div align="right"><a href="jieshao/shiku3.html" target="_blank"><img src="../images/chakan1.png" border="0" id="Image13" onmouseover="MM_swapImage('Image13','','../images/chakan2.png','Image13','','../images/chakan2.png',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+			</div>
+		</div>
+	</div>	
+	<div class="jieshao-jiange"> </div>
+	<div class="jieshao-kuangjia">
+		<div class="jieshao-tu4" style="float: left" ><a href="jieshao/shiku4.html" target="_blank"><img src="../images/shiku/ku4.png" border="0" /></a> </div>
+		<div class="jieshao-zi" style="float: left">
+			<div class="jieshao-biaoti" ><div align="left"><a href="jieshao/shiku4.html" target="_blank">第四石窟</a></div>
+			</div>
+			<div class="jieshao-zw" >
+			  <div align="justify"><a href="jieshao/shiku4.html" target="_blank">第四窟是由东、西二窟组成。东窟有北魏所造之三尊佛，上有唐咸亨元年十月之铭文，其左右并有二佛龛。西窟前面西方之侧壁上亦有大小之三佛龛，其一即刻有唐乾封二年（667）八月之铭文。。。。。。</a></div>
+			</div>
+			<div class="jieshao-aj" ><div align="right"><a href="jieshao/shiku4.html" target="_blank"><img src="../images/chakan1.png" border="0" id="Image14" onmouseover="MM_swapImage('Image14','','../images/chakan2.png',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+			</div>
+		</div>
+	</div>	
+	<div class="jieshao-jiange"> </div>
+	<div class="jieshao-kuangjia-wei">
+		<div class="jieshao-tu5" style="float: left" ><a href="jieshao/shiku5.html" target="_blank"><img src="../images/shiku/ku5.png" border="0" /></a> </div>
+		<div class="jieshao-zi" style="float: left">
+			<div class="jieshao-biaoti" ><div align="left"><a href="jieshao/shiku5.html" target="_blank">第五石窟</a></div>
+			</div>
+			<div class="jieshao-zw" ><div align="justify"><a href="jieshao/shiku5.html" target="_blank">第五窟突兀在壁面之外，是一平面正方形的小窟，面积最大，窟高3米，四壁边长2米。外壁入口之左右安置金刚力士像。入口东方之侧壁已崩坏，西方则有小佛龛，中央有约三公尺之方柱。。。。。。</a></div>
+			</div>
+			<div class="jieshao-aj" ><div align="right"><a href="jieshao/shiku5.html" target="_blank"><img src="../images/chakan1.png" border="0" id="Image15" onmouseover="MM_swapImage('Image15','','../images/chakan2.png',1)" onmouseout="MM_swapImgRestore()" /></a></div>
+			</div>
+		</div>
+	</div>	
+	<div class="jieshao-jiange"> </div>
+</div>
+<!--main-->
+
+
+<!--脚-->
+<div class="foot-base">
+	<div class="foot-main">
+		<div class="foot-bz1">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma1"><img src="../images/foot/weibo1.png"></div>
+			</a>		</div>
+		<div class="foot-bz2">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma2"><img src="../images/foot/weixin1.png"></div>
+			</a>		</div>
+	</div>
+</div>
+<!--脚-->
+</body>
+</html>

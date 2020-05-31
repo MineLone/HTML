@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>巩义石窟寺</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="../css/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../css/public.js"></script>
+</head>
+<body>
+<!--头-->
+<div class="head-pos">
+	<div id="nav_tab" class="head-bg">
+		<div class="head-logo2"></div>
+		<ul class="head-ul">
+			<li><a href="../main.html" >首页</a></li>
+			<li><a href="body1.html">石窟介绍</a></li>
+			<li><a href="body2.html" class="hover">历史文化</a></li>
+			<li class="head-logo"><span class="head-logo-mask"></span><!--span.head-logo-img--></li>
+			<li><a href="body3.html">艺术特点</a></li>
+			<li><a href="body4.html">在线服务</a></li>
+			<li><a href="body5.html">关于我们</a></li>
+		</ul>
+		<div class="head-user"><a href="denglu.html" target="_blank"><i class="icon-user"></i>登录</a><span>|</span><a href="zhuce.html" target="_blank">注册</a></div>
+	</div>
+</div>
+<script>//智能浮动效果
+var obj = document.getElementById("nav_tab"), eq = 0;
+var top = getTop(obj);
+var isIE6 = /msie 6/i.test(navigator.userAgent);
+window.onscroll = function () {
+    var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    // console.log(bodyScrollTop);
+    //滚动的高度
+    var toph = 0;
+    if (bodyScrollTop > 80) {
+        $('#nav_tab').addClass('suspend');
+    } else {
+        $('#nav_tab').removeClass('suspend');
+    }
+    $('#nav_tab').height(bodyScrollTop > 100 ? 50 : 150 - bodyScrollTop);
+
+    // if (bodyScrollTop > top){
+    //     obj.style.position = (isIE6) ? "absolute" : "fixed";
+    //     obj.style.top = (isIE6) ? bodyScrollTop + "px" : "0px";
+    // } else {
+    //     obj.style.position = "static";
+    // }
+    // $(".detail-module").each(function(i){
+    //     var scrolltop=$(this).offset().top;
+    //     if( scrolltop-bodyScrollTop+$(this).height()-48>0){ //当前元素离body顶部的高-被滚动条卷去的高
+    //         eq=i;
+    //         return false;
+    //     }
+    // });
+};
+$('.ticket-menu li').on("mouseenter mouseleave", function (e) {
+    var w = $(this).width();
+    var h = $(this).height();
+    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+    var eventType = e.type;
+    var dirName = ['上方', '右侧', '下方', '左侧'];
+    let mask = $(this);
+    if (e.type === 'mouseenter') {
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        console.log('进', direction);
+        setTimeout(function () {
+            mask.addClass('hover');
+        }, 10);
+    } else {
+        console.log('出', direction);
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        setTimeout(function () {
+            mask.removeClass('hover');
+        }, 10);
+    }
+});
+</script>
+<!--头-->
+
+<div class="lishi-banner"></div>
+
+	
+<div class="lishi-wai">
+	<div class="lishi-jiange"></div>
+		<div class="lishi_wrap">
+			<div class="lishi-jiange2"></div>
+			<div class="lishi-biaoti"><img src="../images/body2/1.png" /></div>
+			<div class="lishi-weizhi">
+			  <p ><a href="../main.html">首页</a> &gt;&gt; <b>历史文化</b></p>
+			</div>
+			<hr/>
+			<p class="lishi-shijian">更新时间：2019-04-20 15:35:46</p> 	
+			<div class="lishi-kuangjia">
+				<div class="lishi-zw">
+				  <p ><img src="../images/lishi/1.jpg"  />&emsp;&emsp;开凿于北魏的石窟寺距今已有1400多年的历史，现存洞窟5个，千佛龛一个，小佛龛255个，摩崖大佛3尊，佛像7743个，碑刻题记200余块。其中的《帝后礼佛图》是我国现存的唯一石刻图雕（另一处位于龙门石窟的已不存在），具有极高的研究和欣赏价值。</p>
+				  <p >&emsp;&emsp;石窟寺背山面水，环境幽雅，风光秀丽，被称为“溪雾岩云”的圣地，“石窟晚钟”为巩县八景之一，1982年国务院将石窟寺列为全国重点文物保护单位，是国家AAA级景区。 </p>
+				  <p >&emsp;&emsp;据唐龙朔二年(662)《后魏孝文帝故希玄寺之碑》记载，北魏孝文帝在此创建伽蓝。明弘治七年(1494)重修碑载：“自后魏宣武帝景明之间，凿石为窟，刻佛千万像，世无能烛其数者。”嗣后东西魏、北齐、隋、唐、北宋，相继于此造窟凿像。现存石窟前的木构建筑为清同治年间所修。寺南临洛水，背依大力山。山的上部为厚4.50米的黄土层,下为岩石层,露出地面的部分厚20米。石窟群就开凿在岩石层上。现有主要洞窟 5个，千佛龛1个，摩崖造像3尊及历代造像龛328个。总计大小造像7743尊，造像题记及其他铭刻186则。造像题记包括北魏3则、东西魏10则、北齐29则、北周2则、唐代85则、宋代2则、时代不详的30则。</p>
+				  <p >&emsp;&emsp;中华人民共和国建立前，石窟寺各窟被盗严重。第 3、4、5窟及千佛龛被泥砂淤埋三分之二以上。1954年清理了各窟内的淤土，新建了石窟寺保护房。1973年以后，国家多次拨款对石窟寺进行了全面化学合剂技术粘接、勾缝、修补。另外还修建了大型排水沟，扩建围墙和其他建筑。1954年起由石窟寺小学负责保护。1987年建立巩县石窟寺文物保管所。</p>
+				  <p >&nbsp;</p>
+			  </div>
+			</div>
+  </div>
+	<div class="lishi-jiange"></div>
+</div>
+
+
+
+<!--脚-->
+<div class="foot-base">
+	<div class="foot-main">
+		<div class="foot-bz1">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma1"><img src="../images/foot/weibo1.png"></div>
+			</a>		</div>
+		<div class="foot-bz2">
+			<a href="#"><img src="../images/foot/weibo.png"/><div class="foot-ma2"><img src="../images/foot/weixin1.png"></div>
+			</a>		</div>
+	</div>
+</div>
+<!--脚-->
+</body>
+</html>

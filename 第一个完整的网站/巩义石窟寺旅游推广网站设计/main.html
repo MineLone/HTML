@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>巩义石窟寺</title>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/main.css">
+
+
+<script type="text/javascript" src="./css/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="./css/public.js"></script>
+
+<script type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.STYLE1 {color: #000000}
+-->
+</style>
+</head>
+
+
+
+<body onload="MM_preloadImages('images/biji/a2.jpg','images/biji/b2.jpg','images/zhutu/a11.png','images/zhutu/d22.png','images/zhutu/b11.png','images/zhutu/b22.png','images/zhutu/c11.png','images/zhutu/d11.png','images/zhutu/a22.png','images/zhutu/c22.png')">
+
+<!--头-->
+<div class="head-pos">
+	<div id="nav_tab" class="head-bg">
+		<div class="head-logo2"></div>
+		<ul class="head-ul">
+			<li><a href="main.html" class="hover">首页</a></li>
+			<li><a href="body/body1.html">石窟介绍</a></li>
+			<li><a href="body/body2.html" >历史文化</a></li>
+			<li class="head-logo"><span class="head-logo-mask"></span></li>
+			<li><a href="body/body3.html">艺术特点</a></li>
+			<li><a href="body/body4.html">在线服务</a></li>
+			<li><a href="body/body5.html">关于我们</a></li>
+		</ul>
+		<div class="head-user"><a href="body/denglu.html" target="_blank"><i class="icon-user"></i>登录</a><span>|</span><a href="body/zhuce.html" target="_blank">注册</a></div>
+	</div>
+</div>
+<script>//智能浮动效果
+var obj = document.getElementById("nav_tab"), eq = 0;
+var top = getTop(obj);
+var isIE6 = /msie 6/i.test(navigator.userAgent);
+window.onscroll = function () {
+    var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    // console.log(bodyScrollTop);
+    //滚动的高度
+    var toph = 0;
+    if (bodyScrollTop > 80) {
+        $('#nav_tab').addClass('suspend');
+    } else {
+        $('#nav_tab').removeClass('suspend');
+    }
+    $('#nav_tab').height(bodyScrollTop > 100 ? 50 : 150 - bodyScrollTop);
+
+    // if (bodyScrollTop > top){
+    //     obj.style.position = (isIE6) ? "absolute" : "fixed";
+    //     obj.style.top = (isIE6) ? bodyScrollTop + "px" : "0px";
+    // } else {
+    //     obj.style.position = "static";
+    // }
+    // $(".detail-module").each(function(i){
+    //     var scrolltop=$(this).offset().top;
+    //     if( scrolltop-bodyScrollTop+$(this).height()-48>0){ //当前元素离body顶部的高-被滚动条卷去的高
+    //         eq=i;
+    //         return false;
+    //     }
+    // });
+};
+$('.ticket-menu li').on("mouseenter mouseleave", function (e) {
+    var w = $(this).width();
+    var h = $(this).height();
+    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+    var eventType = e.type;
+    var dirName = ['上方', '右侧', '下方', '左侧'];
+    let mask = $(this);
+    if (e.type === 'mouseenter') {
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        console.log('进', direction);
+        setTimeout(function () {
+            mask.addClass('hover');
+        }, 10);
+    } else {
+        console.log('出', direction);
+        mask.removeClass('abr-top abr-right abr-bottom abr-left');
+        switch (direction) {
+            case 0:
+                mask.addClass('abr-top');
+                break;
+            case 1:
+                mask.addClass('abr-right');
+                break;
+            case 2:
+                mask.addClass('abr-bottom');
+                break;
+            case 3:
+                mask.addClass('abr-left');
+                break;
+        }
+        setTimeout(function () {
+            mask.removeClass('hover');
+        }, 10);
+    }
+});
+</script>
+<!--头-->
+
+<div id="banner-zy"></div>
+
+<div class="main-news-bg"><div class="main-news-nr"></div></div>
+
+<div class="main-bg">
+	<div class="main-tese-nr-tou"></div>
+	<div class="main-tese-nr-shen">
+		<div class="main-tese-shen-lie" style="float: left" >
+			<div class="main-tese-shen-zi1">
+				<a href="body/yishu/yishu5.html" title="点击查看详情" target="_blank"><img src="images/zhutu/a1.png" name="Images1" width="100%" height="100%" border="0" id="Image" onmouseover="MM_swapImage('Images1','','images/zhutu/a11.png',1)" onmouseout="MM_swapImgRestore()" /></a>			
+				<yinying class="yinying"></yinying>
+		  </div>
+			<div class="main-tese-shen-jg"></div>
+			<div class="main-tese-shen-zi2" >
+				<a href="body/yishu/yishu2.html"title="点击查看详情" target="_blank"><img src="images/zhutu/a2.png" name="Images2"width="100%" height="100%" border="0" id="Images2" onmouseover="MM_swapImage('Images2','','images/zhutu/a22.png',1)" onmouseout="MM_swapImgRestore()" /></a>
+				<yinying class="yinying"></yinying> 
+		  </div>
+				
+		</div>
+		<div class="main-tese-shen-lie" style="float: left" >
+			<div class="main-tese-shen-zi2">
+				<a href="body/yishu/yishu6.html"title="点击查看详情" target="_blank"><img src="images/zhutu/b1.png" name="Images3" width="100%" height="100%" border="0" id="Images3" onmouseover="MM_swapImage('Images3','','images/zhutu/b11.png',1)" onmouseout="MM_swapImgRestore()" /></a> 
+				<yinying class="yinying"></yinying>
+		  </div>
+			<div class="main-tese-shen-jg"></div>
+			<div class="main-tese-shen-zi1">
+				<a href="body/yishu/yishu3.html"title="点击查看详情" target="_blank"><img src="images/zhutu/b2.png" name="Images4"width="100%" height="100%" border="0" id="Images4" onmouseover="MM_swapImage('Images4','','images/zhutu/b22.png',1)" onmouseout="MM_swapImgRestore()" /></a>			</div>
+
+
+		</div>
+		<div class="main-tese-shen-lie" style="float: left" >
+			<div class="main-tese-shen-zi1">
+				<a href="body/body3.html"title="点击查看详情" target="_blank"><img src="images/zhutu/c1.png" name="Images5" width="100%" height="100%" border="0" id="Images5" onmouseover="MM_swapImage('Images5','','images/zhutu/c11.png',1)" onmouseout="MM_swapImgRestore()" /></a>			</div>
+			<div class="main-tese-shen-jg"></div>
+			<div class="main-tese-shen-zi2">
+				<a href="body/yishu/yishu7.html"title="点击查看详情" target="_blank"><img src="images/zhutu/c2.png" name="Images6" width="100%" height="100%" border="0" id="Images6" onmouseover="MM_swapImage('Images6','','images/zhutu/c22.png',1)" onmouseout="MM_swapImgRestore()" /></a>			</div>
+		</div>
+		<div class="main-tese-shen-lie1" style="float: left" >
+			<div class="main-tese-shen-zi2">
+				<a href="body/yishu/yishu4.html"title="点击查看详情" target="_blank"><img src="images/zhutu/d1.png" name="Images7" width="100%" height="100%" border="0" id="Images7" onmouseover="MM_swapImage('Images7','','images/zhutu/d11.png',1)" onmouseout="MM_swapImgRestore()"/></a>			</div>
+			<div class="main-tese-shen-jg"></div>
+			<div class="main-tese-shen-zi1">
+				<a href="body/yishu/yishu1.html"title="点击查看详情" target="_blank"><img src="images/zhutu/d2.png" name="Images8" width="100%" height="100%" border="0" id="Images8" onmouseover="MM_swapImage('Images8','','images/zhutu/d22.png',1)" onmouseout="MM_swapImgRestore()" /></a>			</div>
+		</div>
+	</div>
+	<div class="main-youji-nr-tou"></div>
+	<div class="main-youji-nr-shen">
+		<div class="main-youji-shen-lie" style="float: left" >
+			<a href="body/jieshao/shiku1.html" target="_blank"><img src="images/biji/a1.jpg" name="Image1"  width="580" height="180" border="0" id="Image1" onmouseover="MM_swapImage('Image1','','images/biji/a2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a>
+			<div class="main-youji-shen-zi1"> </div>
+			<div class="main-youji-shen-zi2"> </div>
+	  </div>
+		<div class="main-youji-shen-lie1" style="float: left" >
+			<a href="body/jieshao/shiku3.html" target="_blank"><img src="images/biji/b1.jpg" name="Image2" width="580" height="180" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','images/biji/b2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a>
+			<div class="main-youji-shen-zi1"> </div>
+			<div class="main-youji-shen-zi2"> </div>
+  	  </div>
+	</div>
+	<div style="height:153px; text-align: center; 	margin:0 auto; "><img src="images/Beijing12.png" width="1200" height="153" /></div>
+</div>
+
+
+
+<!--脚-->
+<div class="foot-base">
+	<div class="foot-main">
+		<div class="foot-bz1">
+			<a href="#"><img src="images/foot/weibo.png"/><div class="foot-ma1"><img src="images/foot/weibo1.png"></div>
+			</a>		</div>
+		<div class="foot-bz2">
+			<a href="#"><img src="images/foot/weixin.png"/><div class="foot-ma2"><img src="images/foot/weixin1.png"></div>
+			</a>		</div>
+	</div>
+</div>
+<!--脚-->
+</body>
+</html>
