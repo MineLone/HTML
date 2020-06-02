@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title></title>
     <style type="text/css">
       * {
@@ -23,25 +25,47 @@
         overflow: hidden;
       }
       .box ul {
-        width: 1500px;
+        width: 3000px;
       }
       .box ul li {
-        width: 500px;
-        height: 300px;
         float: left;
+        width: 125px;
+        transition: 1s;
       }
       .box ul li:nth-of-type(1) {
+        height: 100px;
         background: grey;
       }
       .box ul li:nth-of-type(2) {
+        height: 200px;
         background: red;
       }
       .box ul li:nth-of-type(3) {
+        height: 300px;
         background: grey;
       }
-
+      .box ul li:nth-of-type(4) {
+        height: 200px;
+        background: red;
+      }
+      .box ul li:nth-of-type(5) {
+        height: 100px;
+        background: grey;
+      }
+      .box ul li:nth-of-type(6) {
+        height: 200px;
+        background: red;
+      }
+      .box ul li:nth-of-type(7) {
+        height: 300px;
+        background: grey;
+      }
+      .box ul li:nth-of-type(8) {
+        height: 200px;
+        background: red;
+      }
       button {
-        position: absolute;
+        position: absolute; 
         bottom: 0;
         left: 0;
       }
@@ -50,33 +74,88 @@
   <body>
     <div class="box">
       <ul id="box">
-        <li class="box1 bix1"></li>
-        <li class="box2 bix2"></li>
-        <li class="box3 bix3"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
       </ul>
     </div>
   </body>
   <script type="text/javascript">
     /* 查找标签 */
     var box = document.getElementById("box");
+    var oli = document.getElementsByTagName("li");
+    var oliZ = [100, 200, 300, 200, 100, 200, 300, 200, 100, 0];
 
     /* 初始化值 */
+    var n = 0;
     var left = 0;
     box.style.marginLeft = left + "px";
 
     /*轮播图函数*/
     function run() {
       /* 如果整张 停留一秒 */
-      var n = left % 500 == 0 ? 2000 : 10; /*三目运算符*/
+      var n = left % 125 == 0 ? 500 : 500; /*三目运算符*/
 
       /* 图片进行归零 */
-      if (left <= -1000) {
+      if (left <= -500) {
         box.style.marginLeft = "0px";
         left = 0;
       }
+
+      /* 将当前li标签的高度记录在数组中 */
+      
+
+      /* 确定当前位置 调整高度 */
+
+      if (left > -12.5 && left <= 0) { 
+        oli[0].style.height = oliZ[9] + "px";
+        oli[1].style.height = oliZ[0] + "px";
+        oli[2].style.height = oliZ[1] + "px";
+        oli[3].style.height = oliZ[2] + "px";
+        oli[4].style.height = oliZ[3] + "px";
+        oli[5].style.height = oliZ[4] + "px";
+        oli[6].style.height = oliZ[5] + "px";
+        oli[7].style.height = oliZ[6] + "px";
+      }
+      if (left > -137.5 && left <= -12.5) {
+        oli[0].style.height = oliZ[8] + "px";
+        oli[1].style.height = oliZ[9] + "px";
+        oli[2].style.height = oliZ[0] + "px";
+        oli[3].style.height = oliZ[1] + "px";
+        oli[4].style.height = oliZ[2] + "px";
+        oli[5].style.height = oliZ[3] + "px";
+        oli[6].style.height = oliZ[4] + "px";
+        oli[7].style.height = oliZ[5] + "px";
+      }
+      if (left > -262.5 && left <= -137.5) {
+        oli[0].style.height = oliZ[7] + "px";
+        oli[1].style.height = oliZ[8] + "px";
+        oli[2].style.height = oliZ[9] + "px";
+        oli[3].style.height = oliZ[0] + "px";
+        oli[4].style.height = oliZ[1] + "px";
+        oli[5].style.height = oliZ[2] + "px";
+        oli[6].style.height = oliZ[3] + "px";
+        oli[7].style.height = oliZ[4] + "px";
+      }
+      if (left > -387.5 && left <= -262.5) {
+        oli[0].style.height = oliZ[6] + "px";
+        oli[1].style.height = oliZ[7] + "px";
+        oli[2].style.height = oliZ[8] + "px";
+        oli[3].style.height = oliZ[9] + "px";
+        oli[4].style.height = oliZ[0] + "px";
+        oli[5].style.height = oliZ[1] + "px";
+        oli[6].style.height = oliZ[2] + "px";
+        oli[7].style.height = oliZ[3] + "px";
+      }
+
       /* 进行赋值 */
       box.style.marginLeft = left + "px";
-      left -= 10;
+      left -= 12.5;
 
       /* 每隔n时间进行自身调用 */
       setTimeout(run, n);
