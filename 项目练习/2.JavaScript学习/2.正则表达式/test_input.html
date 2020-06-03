@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>正则表达式-表单验证</title>
+    <style type="text/css">
+      body {
+        margin-top: 50px;
+        margin-left: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      用户名：<input type="text" id="username" />（只能使用数字 字母 下划线
+      不能使用数字开头 的6-12位）
+    </p>
+    <p>密码：<input type="password" name="" id="" /></p>
+    <script type="text/javascript">
+      var oInput = document.getElementById("username");
+      oInput.onchange = function () {
+        var val = this.value;
+        var reg=/^[a-zA-Z_]\w{5,11}$/;
+        if(reg.test(val)){
+            console.log("格式正确");
+        }else{
+            console.log("格式错误，请重新输入");
+        }
+
+      };
+    </script>
+  </body>
+</html>

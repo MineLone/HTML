@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Cookie</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin-top: 50px;
+        margin-left: 120px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      正则表达式 regular expression; RegEx; RegExp; Regular Expressions;
+      JavaScript;
+    </p>
+  </body>
+  <script type="text/javascript">
+    /* 两种方法创建正则表达式 */
+    //【创建】
+    var reg = /abc/; // 1.字面量的方式创建
+    var reg = new RegExp("abc"); // 2.构造函数
+
+    //【使用】
+    var flag = reg.test(str); //检测字符串str   有 返回true，无 返回false
+
+    //【修饰符】 g i m
+    var reg = /abc/g; //g  g: global match 表示全局匹配 在全文中查找所出现的指定字符串
+    var reg = /abc/i; //i  i: ignore case 忽略大小写的功能  是不能单独使用的
+    var reg = /abc/m; //m  多行查找
+    var reg = /abc/gi; //gi  多修饰符
+
+    //【特殊字符】
+    // . 点 【匹配单字符】  匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 \. 。
+    var reg = /a.c/g; //  var reg = /a\.c/g;
+    // * 星 【匹配任意字符 0-N 个】  匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 \*。
+    var reg = /a*c/g; //  var reg = /a\*c/g;
+    // + 加 【至少一次重复匹配】  匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 \+。
+    var reg = /a+c/g; //  var reg = /a\+c/g;
+    // ？问 【0或1次匹配】  匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 \?。
+    var reg = /a?c/g; //  var reg = /a\?c/g;
+    // [] 中括号 【匹配范围 [为开始 ]为结束】 [包含起始值，]包含结束值，要匹配 [，请使用 \[。
+    var reg = /[1-9]/g; //  var reg = /\[1-9\]/g;
+
+    // \w 小写【匹配 数字 字母 下划线】单独出现匹配一个 配合.*+？进行限制
+    var reg = /\w/g;
+    // \W 大写【匹配 非数字 字母 下划线】单独出现匹配一个 配合.*+？进行限制
+    var reg = /\W/g;
+    // \d 小写【匹配 数字】单独出现匹配一个 配合.*+？进行限制
+    var reg = /\d/g;
+    // \D 大写【匹配 非数字】单独出现匹配一个
+    var reg = /\D/g;
+    // \s 小写【匹配 空格】单独出现匹配一个
+    var reg = /\s/g;
+    // {m,n} 花括号【至少匹配m次，至多匹配n次】【连续的】｛m｝n可以省略 n省略时匹配 n次 请使用 \{。
+    var reg = /go\{3\}gle/g;
+    // /^ 【匹配开始】 $/ 【匹配结束】
+    var reg = /^g.*g$/g;
+    // | 【或】   [^] 【非】
+    var reg = /google|baidu|/gi;
+    // () 小括号【分组】 将内容作为一个整体进行匹配
+    var reg = /(google){4,6})/gi;
+
+    //【字符串的方法】
+    //.match();   在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。 【查询对象】
+    console.log(str.match(reg));
+    //.search();  用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串  返回一个匹配的下标  索引位置 例：5；【查询位置】
+    console.log(str.search(reg));
+    //.split();   用于把一个字符串分割成字符串数组  【分割】
+    console.log(str.split(reg));
+    //.replace(); 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。  【替换】
+    console.log(str.replace(reg, "*"));
+    //.exec();    用于检索字符串中的正则表达式的匹配。【返回数组，存放匹配结果。未找到匹配，返回值为 null】index索引的下标 input存放被检索的字符串
+    console.log(str.replace(reg, "*"));
+  </script>
+</html>

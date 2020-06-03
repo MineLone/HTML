@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Cookie</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin-top: 50px;
+        margin-left: 120px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      正则表达式 regular expression; RegEx; RegExp; Regular Expressions;
+      JavaScript;
+    </p>
+  </body>
+  <script type="text/javascript">
+    /* 两种方法创建正则表达式 */
+    //【创建】
+    // 1.字面量的方式创建
+    var reg = /abc/;
+    // 2.构造函数
+    var reg = new RegExp("abc");
+
+    //test方法 正则表达式的方法 用来检查字符串是否含有符合规则的字串 有的话 返回true， 无 返回false
+
+    //例子
+    var str = "abc"; //声明一个字符串
+
+    var flag = reg.test(str); //检测字符串str   有 返回true，无 返回false
+
+    console.log(flag); //输出结果
+
+    //修饰符 g i
+    var reg = /abc/g; //g  g: global match 表示全局匹配 在全文中查找所出现的指定字符串
+    var str = "abcBABCCbacabc"; //字符串
+
+    //gi: both global match and ignore case 匹配所有可能的值，也忽略大小写
+    var reg = /abc/gi; //i i: ignore case 忽略大小写的功能  是不能单独使用的
+
+    // var reg = /abc/m; ///m 多行查找
+
+    //  match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+    //  stringObject.match(searchvalue) stringObject.match(regexp)
+
+    console.log(str.match(reg));
+
+    //【字符串的方法】
+    //.match();   在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。 【查询对象】
+    //.search();  用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串  返回一个匹配的位置  索引位置 例：5；【查询位置】
+    //.split();   用于把一个字符串分割成字符串数组  【分割】
+    //.replace(); 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。  【替换】
+    //.exec();    用于检索字符串中的正则表达式的匹配。【返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。】
+    //            返回值: index:0; 当前索引到的第一个匹配对象的下标位置
+    //                    input:“good good AMD good”; 存放的是被检索的字符串
+    //                    找不到匹配的文本时，返回null index清0；
+
+    //【分割】.split();
+    var reg = /-/;
+    var str = "a-b-c-BABC-Cbac-abc";
+    console.log(str.split(reg));
+
+    //【替换】.replace();
+    var reg = /tmd/gi;
+    var str = "abc-BA tmd ac-abc TMD";
+    console.log(str.replace(reg, "*"));
+
+    //【检索匹配字符串】.exec();
+    var reg = /good/;
+    var str = "good good AMD good";
+    console.log(reg.exec(str)); //正则表达式.exec（字符串）；
+
+    var reg = /good/g;
+    var str = "good good AMD good";
+    console.log(reg.exec(str)); //正则表达式.exec（字符串）；
+    console.log(reg.exec(str)); //正则表达式.exec（字符串）；
+    console.log(reg.exec(str)); //正则表达式.exec（字符串）；
+
+    // [] 中括号 【匹配范围 [为开始 ]为结束】  标记一个中括号表达式的开始。要匹配 [，请使用 \[。
+    var reg = /[1 9]/g; //  var reg = /a\.c/g;
+    var str = "0123456789";
+    console.log(reg.test(str), str.match(reg)); //输出到控制台
+
+    // \w 小写【匹配 数字 字母 下划线】
+    var reg = /\w/g;
+    var str = "-*/#+0123asd_";
+    console.log(reg.test(str), str.match(reg)); //输出到控制台
+
+    // \W 大写【匹配 非数字 字母 下划线】
+    var reg = /\W/g;
+    var str = "-*/#+0123asd_";
+    console.log(reg.test(str), str.match(reg)); //输出到控制台
+
+    // \s 小写【匹配 空格】单独出现匹配一个
+    var reg = /\s+/g;
+    var str = "Hell o w    een";
+    console.log(str.replace(reg, "")); //输出到控制台
+
+    console.clear(); //清空控制台
+
+    // {m,n} 花括号【至少匹配m次，至多匹配n次】【连续的】｛m｝n可以省略 n省略时匹配 n次 请使用 \{。
+    var reg = /go\{3\}gle/g;
+    var str = "gooooooogle";
+    console.log(reg.test(str), str.match(reg)); //输出到控制台
+
+    // /^ 【匹配开始】 $/ 【匹配结束】
+    var reg = /^g.*g$/g;
+    var str = "goooooooglegag";
+    console.log(reg.test(str), str.match(reg)); //输出到控制台
+
+    
+
+    // | 【或】
+    var reg = /google|baidu|bing|yahu/g;
+    var str = "www.baidu.com";
+    console.log(reg.test(str), str.match(reg)); //输出到控制台
+
+    // () 小括号【分组】 将内容作为一个整体进行匹配
+    var reg = /(google){3,6}/gi;
+    var str = "googleaaagogolegooglegooglegoogle";
+    console.log(reg.test(str), str.match(reg)); //输出到控制台
+    console.log(RegExp.$1);  //输出正则表达式匹配的第一个 子匹配(以括号为标志)字符串
+
+  </script>
+</html>
