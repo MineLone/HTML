@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6</title>
+  </head>
+  <body>
+    <p>ES6</p>
+    <ul id="text">
+        <li>1</li>
+    </ul>
+  </body>
+  <script type="text/javascript">
+    {
+      let a = 1; //声明变量  let 声明的变量只在 let 命令所在的代码块内有效。
+      {
+        //let 关键字在不同作用域，或不同块级作用域中是可以重新声明赋值的:
+        let x = 2; // 合法
+        {
+          let x = 3; // 合法
+        }
+        {
+          let x = 4; // 合法
+        }
+      }
+      {
+        /*
+        //在相同的作用域或块级作用域中，不能使用 let 关键字来重置 let 关键字声明的变量:
+        let x = 2; // 合法
+        let x = 3; // 不合法
+        */
+      }
+      {
+        /*
+        //在相同的作用域或块级作用域中，不能使用 var 关键字来重置 let 关键字声明的变量:
+        let x = 4; // 合法
+        var x = 5; // 不合法
+        */
+      }
+      //var 关键字定义的变量可以在使用后声明，也就是变量可以先使用再声明
+      //let 关键字定义的变量则不可以在使用后声明，也就是变量需要先声明再使用。
+    }
+    {
+      //JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。
+      //JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。
+
+      {
+        /*
+        //实例1 结果一样
+        x = 5; // 变量 x 设置为 5
+        elem = document.getElementById("demo"); // 查找元素
+        elem.innerHTML = x; // 在元素中显示 x
+        */
+      }
+      {
+        /*
+        //实例2 结果一样
+        var x; // 声明 x
+        x = 5; // 变量 x 设置为 5
+        elem = document.getElementById("demo"); // 查找元素
+        elem.innerHTML = x; // 在元素中显示 x
+        */
+      }
+    }
+    {
+      const b = 2; //声明常量  不允许改变  【不能陪重新赋值  但是可以修改】
+      //const 用于声明一个或多个常量，声明时必须进行初始化，且初始化后值不可再修改：
+
+      /*
+     const定义常量与使用let 定义的变量相似：
+
+     二者都是块级作用域
+     都不能和它所在作用域内的其他变量或函数拥有相同的名称
+     两者还有以下两点区别：
+
+     const声明的常量必须初始化，而let声明的变量不用
+     const 定义常量的值不能通过再赋值修改，也不能再次声明。而 let 定义的变量值可以修改。
+     */
+      {
+        /*
+        const PI = 3.141592653589793;
+        PI = 3.14; // 报错
+        PI = PI + 10; // 报错
+        */
+      }
+
+      //const 的本质: const 定义的变量并非常量，并非不可变，它定义了一个常量引用一个值。使用 const 定义的对象或者数组，其实是可变的。下面的代码并不会报错：
+      {
+        // 创建常量对象
+        const car = { type: "Fiat", model: "500", color: "white" };
+
+        // 修改属性:
+        car.color = "red";
+
+        // 添加属性
+        car.owner = "Johnson";
+      }
+    }
+    {
+      //【解构赋值】按照一定的模式，从数组和对象中提取值，对变量进行赋值
+      /*
+      如果变量名与属性名不一致，必须写成下面这样
+      let obj = { first: "hello", last: "world" };
+      let { first: f, last: l } = obj;
+      f; // 'hello'
+      l; // 'world'
+      //说明对象的解构赋值是下面形式的简写;
+      let { foo: foo, bar: bar } = { foo: "aaa", bar: "bbb" };
+      //   注释:与数组相同点
+      //   1对象的解构赋值也是可以嵌套的，
+      //   2另外对象也可以定义默认值，并且属性的值为undefined，默认值才会有效果
+      //   3解析失败那么值为undefined。
+      */
+
+      let obj = { name: "li", age: 20 };
+      let { name, age } = obj;
+      console.log(`${name}的年龄是${age}`);
+    }
+
+    var arr = [0, 1, 2, 3, 4, 5];
+    // var oUL = document.getElementById("text");   //获取的是一个对象。
+    var oUL = document.getElementsByTagName("ul"); //获取的是一个包含对象的集合。
+    var html = "";
+    for (var i in arr) {
+      html += "<li>" + arr[i] + "</li>";
+    }
+    console.log(oUL);
+    console.log(html);
+    oUL[0].innerHTML = html;
+
+    
+
+
+  </script>
+</html>
