@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+      /*    【面向对象】
+       是一种编程架构
+       【面向对象的目的】       【面向对象的特性】
+       1.重用性                 1.封装性
+       2.灵活性                 2.继承性
+       3.扩展性                 3.多态性
+
+       【面向对象的组成】
+       一、属性 描述状态
+       二、方法 描述行为
+       变量就是属性，函数是方法
+
+      */
+      /*    【创建对象】
+
+      //通过new 方法创建构造函数
+
+      function Foo() {
+        this.name = "MsLi";
+        this.shouName = function () {
+          console.log(this.name);
+        };
+      }
+      var obj = new Foo();
+      obj.shouName();
+
+      //进行传递参数
+      function Foo1(name) {
+        this.name = name;
+        this.shouName = function () {
+          console.log(this.name);
+        };
+      }
+      var obj1 = new Foo1("hello");
+      obj1.shouName();
+
+      //相同的函数 不一定相等
+      console.log(obj.shouName == obj1.shouName); //涉及对象的引用
+
+
+      */
+      /*    【对象的引用】
+
+      类型比较方式
+        对象比较时，值跟引用地址都相同时才相等
+      类型赋值方式
+        对象赋值时，值跟引用地址都进行赋值操作
+      浅拷贝与深拷贝
+        实现对对象的复制操作
+
+      //浅拷贝
+      var obj = { name: "MsLi" };
+      var obj2 = copy(obj);
+      obj2.name = "hi"
+      console.log(obj);
+
+      function copy(obj){
+        var result = {};
+        //利用for in 循环进行赋值
+        for(var attr in obj){
+          result[attr] = obj[attr];
+        }
+        return result;
+      }
+
+      //深拷贝
+      var obj = { name: { age: 20 } };
+      var obj2 = copy(obj);
+      obj2.name.age = 30;
+      console.log(obj);
+
+      function copy(obj) {
+        //深拷贝
+        var result = {};
+        //利用for in 循环进行赋值
+        for (var attr in obj) {
+          //利用递归进行分解
+          if (typeof obj[attr] == "object") {
+            result[attr] = copy(obj[attr]);
+          } else {
+            result[attr] = obj[attr];
+          }
+        }
+        return result;
+      }
+
+      */
+      /*    【原型与原型链】
+
+      原型
+        在构造函数下边有一个prototype属性叫做原型，构造函数+原型整体也是一个对象，叫做原型对象，在原型对象下面可以添加属性和方法。
+      共享
+        原型对象下的属性和方法，可供多个对象进行共享访问，这样就可以节省内存消耗。
+      原型链
+        __proto__ ：内部属性 查找当前对象的原型对象
+
+        */
+      /*    【系统对象与包装对象】
+
+      系统对象
+        最大的对象为window对象
+      包装对象
+
+      */
+      /*    【相关语法】
+      
+      constructor
+        原型对象下唯一默认自带的属性，用于查看对象的构造函数
+      instanceof
+        左边是实例对象，右边是构造函数。它会检查右边构建函数的原型对象，是否在左边对象的原型链上
+      in与for...in
+        in运算符返回一个布尔值，表示一个对象是否具有某个属性。
+        for...in循环可获得对象的所有可枚举属性。
+
+      */
+
+
+    </script>
+  </head>
+  <body></body>
+</html>
