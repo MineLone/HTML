@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>拖拽实例_对象继承的方法</title>
+    <style>
+      #div1 {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+      }
+      #div2 {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+  </body>
+  <script>
+    function Drag(id) {
+      this.disX = 0; //获取坐标
+      this.disY = 0;
+      this.elem = document.getElementById(id); //获取id
+    }
+
+    //初始化
+    Drag.prototype.init = function () {
+      var This = this; //因为this经常改变  所以让this指向对象
+      this.elem.onmousedown = function (ev) {
+        //对元素进行按下操作
+        This.fnDown(ev);
+        document.onmousemove = function (ev) {
+          //当鼠标移动时 拖拽元素
+          This.fnMove(ev);
+        };
+        document.onmouseup = function () {
+          //当鼠标抬起时
+          This.fnUp();
+        };
+        return false;
+      };
+    };
+    Drag.prototype.fnDown = function (ev) {
+      this.disX = ev.pageX - this.elem.offsetLeft; //获取当前鼠标的位置
+      this.disY = ev.pageY - this.elem.offsetTop;
+    };
+    Drag.prototype.fnMove = function (ev) {
+      //给当前元素进行位置修改
+      this.elem.style.left = ev.pageX - this.disX + "px";
+      this.elem.style.top = ev.pageY - this.disY + "px";
+    };
+    Drag.prototype.fnUp = function () {
+      document.onmousemove = null;
+      document.onmouseup = null;
+    };
+
+    var d1 = new Drag("div1");
+    d1.init();
+  </script>
+</html>
