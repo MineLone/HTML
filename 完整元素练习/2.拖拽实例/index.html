@@ -60,7 +60,19 @@
       document.onmouseup = null;
     };
 
+    function ChildDrag(id) {
+      Drag.call(this, id);
+    }
+    extend(ChildDrag, Drag);
     var d1 = new Drag("div1");
     d1.init();
+    var d2 = new ChildDrag("div2");
+    d2.init();
+
+    function extend(subs, sups) {
+      for (var attr in sups.prototype) {
+        subs.prototype[attr] = sups.prototype[attr];
+      }
+    }
   </script>
 </html>
