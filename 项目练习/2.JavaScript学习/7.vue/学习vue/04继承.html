@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">{{message}}</div>
+  </body>
+  <script>
+    //vue 实例
+    //vue组件其实是可扩展的vue实例
+    var vm = new Vue({
+      el: '#app',
+      template: '<h1>我是一个实例</h1>',
+    })
+
+    //继承
+    var myComputer = Vue.extends({
+      data() {
+        return { message: 'hello' }
+      },
+    })
+    var vm = myComputer({
+      el: '#app',
+    })
+  </script>
+</html>

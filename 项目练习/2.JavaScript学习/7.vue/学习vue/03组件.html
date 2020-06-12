@@ -8,16 +8,42 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <ol>
-      <!-- 创建一个 todo-item 组件的实例 -->
-      <todo-item></todo-item>
-    </ol>
+    <div id="app">
+      <abd></abd>
+    </div>
   </body>
   <script>
-    //在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。在 Vue 中注册组件很简单：
-    // 定义名为 todo-item 的新组件
-    Vue.component('todo-item', {
-      template: '<li>这是个待办项</li>',
+    /*全局组件
+    //通过Vue.component来创建全局组件
+    Vue.component('abd', {
+      //template 组件替换
+      template: '<h2>组件替换</h2>',
+    })
+    var vm = new Vue({
+      el: '#app',
+    })
+    */
+    //局部组件
+    Vue.component('abd', {
+      //template 组件替换
+      template: '<h2>组件替换</h2>',
+    })
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        //这个是数据
+        message1: 'Hello Vue!',
+      },
+      //创建局部组件
+      components: {
+        abd: {
+          template:
+            '<h2>我是局部{{message1}}组件<h3>我是局部{{message2}}组件</h3></h2>',
+          data() {
+            return { message2: 'Hello Vue!' }
+          },
+        },
+      },
     })
   </script>
 </html>
