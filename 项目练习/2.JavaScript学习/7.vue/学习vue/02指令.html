@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app-2">
+      <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+      </span>
+    </div>
+    <div id="app-3">
+      <p v-if="seen">现在你看到我了</p>
+    </div>
+  </body>
+  <script>
+    //绑定元素 attribute
+
+    //v-bind：attribute 被称为指令  可以进行属性的绑定
+    var app2 = new Vue({
+      el: '#app-2',
+      data: {
+        message: '页面加载于 ' + new Date().toLocaleString(),
+      },
+    })
+    //控制切换一个元素是否【显示】也相当简单：
+
+    //v-if  控制显示
+
+    //v-for 控制循环
+
+    //v-on  添加一个事件监听器
+
+    //v-model 表单输入和应用状态之间的双向绑定
+
+    var app3 = new Vue({
+      el: '#app-3',
+      data: {
+        seen: true,
+      },
+    })
+  </script>
+</html>
