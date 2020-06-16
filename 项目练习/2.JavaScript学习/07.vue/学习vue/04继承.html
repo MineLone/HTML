@@ -19,9 +19,11 @@
     })
 
     //继承
-    var myComputer = Vue.extends({
-      data() {
-        return { message: 'hello' }
+    var myComputer = Vue.extend({
+      data: function () {
+        return {
+          message: 'hello',
+        }
       },
     })
     var vm = myComputer({
