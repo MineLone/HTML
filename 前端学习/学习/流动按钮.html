@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>流动按钮</title>
+    <style type="text/css">
+        html, body {
+            margin: 0; /*外边距*/
+            padding: 0; /*内边距*/
+            background-color: #000; /*背景颜色*/
+            width: 100%; /*界面大小*/
+            height: 100%; /*界面大小*/
+            display: flex; /*弹性盒*/
+            justify-content: center; /*横轴居中*/
+            align-items: center; /*纵轴居中*/
+        }
+        a {
+            text-decoration: none; /*初始化样式*/
+            width: 200px; /*按键高*/
+            height: 60px; /*按键宽*/
+            color: white;
+            text-align: center; /*文字居中*/
+            line-height: 60px; /*文字行高*/
+            border-radius: 30px; /*圆角*/
+            background: linear-gradient( 90deg,#03a9f4, #f441a5, #ffeb3b, #03a9f4, #f441a5, #ffeb3b, #03a9f4); /*渐变背景*/
+            background-size: 400%; /*背景尺寸*/
+            cursor: pointer;
+            position: relative;
+        }
+            a:hover {
+                background: linear-gradient( 90deg,#03a9f4, #f441a5, #ffeb3b, #03a9f4, #f441a5, #ffeb3b, #03a9f4); /*渐变背景*/
+                background-size: 400%; /*背景尺寸*/
+                z-index: 1;
+                animation: donghua 8s linear infinite;
+            }
+            a:after {
+                content: "";
+                position: absolute;
+                background: inherit;
+                top: -5px; /*当设置对立的2个定位属性时，元素的大小将由对立的大小决定*/
+                left: -5px;
+                right: -5px;
+                bottom: -5px; /*当设置对立的2个定位属性时，元素的大小将由对立的大小决定*/
+                border-radius: 30px; /*圆角*/
+                filter: blur(20px); /*过渡：模糊*/
+                opacity: 0;
+                transition: opacity 0.5s;
+            }
+            a:hover:after {
+                opacity:1;
+                z-index:-1;
+            }
+            @keyframes donghua {
+                0% {
+                background-position: 0%;
+            }
+            100%{
+                background-position:400%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+        <a href="#">鼠标放上去</a>
+
+</body>
+</html>

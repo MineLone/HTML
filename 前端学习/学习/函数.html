@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>函数</title>
+    <script type="text/javascript">
+
+        /*
+            //【命名规范】
+            1、区分大小写
+            2、第一个字符必须是字母、下划线（   ）或美元符号（$）
+            3、其他字符可以是字母、下划线、美元符号或者数字
+        */
+
+
+        /*【无参函数】
+            格式：
+                function 函数名 {
+                    函数体;
+                }
+            【调用】
+                函数名();
+        */
+        /*【有参函数】
+            格式：
+                function 函数名 {参数1；参数2；....
+                    函数体;
+                }
+            【调用】
+                函数名(参数1；参数2；....);
+        */
+        /*【不确定参数个数函数】
+        
+        function sun() {
+            alert(arguments.length);
+            alert(arguments[0]);//访问arguments的第一个参数
+        }
+        sun(1, 2, 3);
+
+        
+
+        function sum() {//声明函数
+            var sum = 0;//初始化变量
+            for (var i = 0; i < arguments.length; i++) { //判断参数的个数进行循环
+                sum += arguments[i]; //加上每个传入参数的值
+            }
+            alert(sum); //弹窗提示
+        }
+        sum(21, 456, 85);//调用函数
+        */
+        /*
+        【函数返回值】-就是函数外部可以调用的值
+            通过 return 语句跟后面要返回的值来实现返回值
+            return 后面所跟表达式的值就是当前函数调用的值
+
+            【注】return 语句执行后函数结束
+        function add(num1, num2) {
+            //num1 + num2
+            return num1 + num2;
+        }
+        var result = add(3, 4);
+        alert(result);
+        */
+        /*
+        【函数的作用域】
+            函数内声明的变量只在函数内部生效
+
+            全局变量作用域全局
+            局部变量只对局部内使用
+        ------------------------------
+        var a = 10; //全局变量
+        function sum(){
+            a = 5;  
+        }
+        alert(a);//结果10
+        sum();//调用函数
+        alert(a);//结果5
+
+        ------------------------------
+        var a = 10; //全局变量
+        function sum() {
+            var a = 5;
+            alert(a);//结果5
+        }
+        alert(a);//结果10
+        sum();//调用函数
+        alert(a);//结果10
+
+        ------------------------------
+        var a = 10; //全局变量
+        function sum() {
+            alert(a);//结果undefined
+            var a = 5; //局部变量
+            alert(a);//结果5
+        }
+        alert(a);//结果10
+        sum();//调用函数
+        alert(a);//结果5
+        ------------------------------
+        【递归】
+            【注】短时间内内存剧增。
+
+        function sum(n) {
+            if (n == 1) {
+                return 1;
+            }
+            return sum(n - 1) + n;
+        }
+        alert(sum(100));
+        
+        【斐波那契数列】
+            【问】一对新生兔子，从第四个月开始每月月初生一对兔子，新生的兔子从第四月月初又开始生一对兔子，
+            按此规律，并假定兔子没有死亡，n（n <=20）个月月末共有多少对兔子。
+
+        ------------------------------
+        function rabbit(month) {
+            if (month > 20) {
+                
+                return "数值太大"
+            }
+            if (month < 4) {
+                return 1;
+            }
+            return rabbit(month - 3) + rabbit(month - 1);
+        }
+        alert(rabbit(23));
+        ------------------------------
+        【事件驱动函数】
+            与页面交互的函数
+            点击按钮（onclick）
+            鼠标浮动或离开（onmouseover、onmouseout）
+            文本框获取焦点和失去焦点时（onfocus、onblur）等
+        window.onload = function () {
+            var ad = document.getElementById("button");
+            //alert(ad);
+
+            //给按钮添加事件驱动函数
+            //单机 onclick
+            ad.onclick = function () {
+
+                alert("单击");
+            }
+        }
+        ------------------------------
+        window.onload = function () {
+            var oBtn = document.getElementById("btn");
+            var oTxt = document.getElementById("txt");
+
+            //给按钮添加事件驱动函数
+            oBtn.onclick = function () {
+                oTxt.value = "已经清空";
+            }
+        }
+        ------------------------------
+
+        -----------计算器练习----------
+        window.onload = function () {
+            var oBtn = document.getElementById("btn");
+            var oTxt1 = document.getElementById("txt1");
+            var oTxt2 = document.getElementById("txt2");
+            var oTxt3 = document.getElementById("txt3");
+
+            //给按钮添加事件驱动函数
+            oBtn.onclick = function () {
+                var num1 = Number(oTxt1.value);
+                var num2 = Number(oTxt2.value);
+                oTxt3.value = num1 + num2;
+            }
+        }
+        */
+
+
+    </script>
+    <style type="text/css">
+        *,html,body{
+            margin:20px 20px;
+        }
+        input{
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+    <!--<input type="text" placeholder="请输数值" id="txt1" />
+    +
+    <input type="text" placeholder="请输数值" id="txt2" />
+    =
+    <input type="text" readonly="readonly" id="txt3" />
+    <br />
+    <input type="button" value="计算" id="btn" />-->
+
+    <!--<input type="button" value="计算" id="btn" />-->
+</body>
+</html>

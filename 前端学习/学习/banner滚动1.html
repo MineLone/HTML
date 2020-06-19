@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>banner滚动练习</title>
+    <style type="text/css">
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        a{
+            text-decoration:none;
+        }
+        img{
+            display:block;
+            max-width:100%;
+            
+        }
+        /*banner*/
+        div.banenr {
+            width: 1920px;
+            height: 650px;
+            margin: 0px auto;
+            position: relative;
+            animation:banner 5s;
+        }
+        /*图片列表*/
+        div.list {
+            max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+        /*按键定位*/
+        div.button {
+            position: absolute;
+            right: 50px;
+            bottom: 60px;
+            height: 30px;
+        }
+        /*按键样式*/
+        .button a {
+            margin-right:20px;
+            display:block;
+            width:50px;
+            height:50px;
+            background:#ffffff80;
+            text-align:center;
+            font-size:25px;
+            line-height:50px;
+            float:left;
+            color:#000000;
+        }
+            /*鼠标经过样式*/
+            .button a:hover {
+                background: #ff6a00dd;
+            }
+    </style>
+</head>
+<body>
+    <div class="banenr">
+        <div class="button">
+            <a href="#img1">1</a>
+            <a href="#img2">2</a>
+            <a href="#img3">3</a>  
+            <a href="#img4">4</a>
+        </div> 
+        <div class="list">
+            <img id="img1" src="images/banner1.jpg" />
+            <img id="img2" src="images/banner2.png" />
+            <img id="img3" src="images/banner3.png" />
+            <img id="img4" src="images/banner4.png" />
+        </div>
+    </div>
+</body>
+</html>

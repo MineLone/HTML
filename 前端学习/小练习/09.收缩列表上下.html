@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>9收缩列表上下</title>
+    <link href="../css/iconfont.css" rel="stylesheet" />
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+        }
+        .listbox {
+            /*border: 3px solid green;*/
+            width: 500px;
+            height: 400px;
+        }
+            .listbox .list {
+                position: relative;
+            }
+                .listbox .list:target p {
+                    height: 129px;
+                }
+                .listbox .list a {
+                    color: white;
+                    display: block;
+                    height: 35px;
+                    background: linear-gradient(#cecece,#8f8f8f);
+                    border-radius: 5px;
+                    padding-left: 15px;
+                    text-decoration: none;
+                    line-height: 35px;
+                    font-size: 18px;
+                    text-transform: capitalize ;
+                }
+                    .listbox .list a:hover, .listbox .list:target a {
+                        background: linear-gradient(to top,#6190e8,#a7bfe8);
+                    }
+                .listbox .list:nth-of-type(2) {
+                    margin: 8px auto;
+                }
+                .listbox .list span {
+                    /* 边框画的三角形样式 */
+                    /*width: 0;
+                    height: 0;
+                    border-top: 5px solid white;
+                    border-right: 5px solid rgba(0,0,0,0);
+                    border-bottom: 5px solid rgba(0,0,0,0);
+                    border-left: 5px solid rgba(0,0,0,0);
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;*/
+                    /* iconfont 图标 */
+                    position: absolute;
+                    font-size:15px;
+                    line-height:38px;
+                    top: 0px;
+                    right: 15px;
+                    color:white;
+                }
+                .listbox .list:target span {
+                    /* 边框画的三角形样式 */
+                    /*border-left: 5px solid white;
+                    border-top: 5px solid rgba(0,0,0,0);
+                    top: 12px;
+                    right: 12px;*/
+                    /* iconfont 图标 */
+                    position: absolute;
+                    font-size: 15px;
+                    line-height: 38px;
+                    top: 0px;
+                    right: 15px;
+                    color: blue;
+                    transform:rotate(90deg);
+                }
+                .listbox .list p {
+                    color: white;
+                    height: 0px; /* 129px */
+                    overflow: auto;
+                    padding-left: 10px;
+                    transition: all 1s;
+                }
+    </style>
+</head>
+<body>
+    <div class="listbox">
+        <div class="list" id="list1">
+            <a href="#list1">list1<span class="icon iconfont">&#xe502;</span></a>
+            <!--<span></span>--> <!--边框三角形-->
+            
+            <p>wo shi nei rong wo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong</p>
+        </div>
+        <div class="list" id="list2">
+            <a href="#list2">list2<span class="icon iconfont">&#xe502;</span></a>
+            <!--<span></span>--> <!--边框三角形-->
+            <p>wo shi nei rong wo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong</p>
+        </div>
+        <div class="list" id="list3">
+            <a href="#list3">list3<span class="icon iconfont">&#xe502;</span></a>
+            <!--<span></span>--> <!--边框三角形-->
+            <p>wo shi nei rong wo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rongwo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong wo shi nei rong</p>
+        </div>
+    </div>
+</body>
+</html>

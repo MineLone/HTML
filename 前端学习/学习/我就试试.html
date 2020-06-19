@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box {
+            width: 500px;
+            height: 300px;
+            border: 3px solid green;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            margin-top: -150px;
+            overflow: hidden;
+        }
+
+            .box ul {
+                width: 3000px;
+            }
+
+                .box ul li {
+                    float: left;
+                    width: 125px;
+                }
+
+                    .box ul li:nth-of-type(1) {
+                        height: 100px;
+                        background: grey;
+                    }
+
+                    .box ul li:nth-of-type(2) {
+                        height: 200px;
+                        background: red;
+                    }
+
+                    .box ul li:nth-of-type(3) {
+                        height: 300px;
+                        background: grey;
+                    }
+
+                    .box ul li:nth-of-type(4) {
+                        height: 200px;
+                        background: red;
+                    }
+
+                    .box ul li:nth-of-type(5) {
+                        height: 100px;
+                        background: grey;
+                    }
+
+                    .box ul li:nth-of-type(6) {
+                        height: 200px;
+                        background: red;
+                    }
+
+                    .box ul li:nth-of-type(7) {
+                        height: 300px;
+                        background: grey;
+                    }
+
+                    .box ul li:nth-of-type(8) {
+                        height: 200px;
+                        background: red;
+                    }
+
+                    .box ul li:nth-of-type(9) {
+                        height: 100px;
+                        background: grey;
+                    }
+
+                    .box ul li:nth-of-type(10) {
+                        height: 200px;
+                        background: red;
+                    }
+
+        button {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul id="box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    /* 查找标签 */
+    var box = document.getElementById("box");
+
+    /* 初始化值 */
+    var left = 0;
+    box.style.marginLeft = left + "px";
+
+    /*轮播图函数*/
+    function run() {
+      /* 如果整张 停留一秒 */
+      var n = left % 125 == 0 ? 2000 : 10; /*三目运算符*/
+
+      /* 图片进行归零 */
+      if (left <= -500) {
+        box.style.marginLeft = "0px";
+        left = 0;
+      }
+      /* 进行赋值 */
+      box.style.marginLeft = left + "px";
+      left -= 12.5;
+
+      /* 每隔n时间进行自身调用 */
+      setTimeout(run, n);
+    }
+
+    /*执行函数run（）*/
+    run();
+
+    /* 查找标签 */
+    var oli = document.getElementsByTagName("li");
+    console.log(oli);
+    console.log(oli[0]);
+
+    var oh = 0;
+
+    function hrun() {
+      oli[0].style.height = oh + "px";
+      oli[1].style.height = oh + "px";
+      oli[2].style.height = oh + "px";
+      oli[3].style.height = oh + "px";
+      oli[4].style.height = oh + "px";
+      oli[5].style.height = oh + "px";
+      oli[6].style.height = oh + "px";
+      oli[7].style.height = oh + "px";
+      oli[8].style.height = oh + "px";
+    }
+
+    hrun();
+</script>
+</html>

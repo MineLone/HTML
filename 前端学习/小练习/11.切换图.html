@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="index.css" rel="stylesheet">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #282c34;
+        }
+
+        .tab_contents ul {
+            list-style: none;
+        }
+
+        /*定义盒子*/
+        .tab_contents {
+            width: 700px;
+            height: 200px;
+        }
+
+            /*导航横排*/
+            .tab_contents .tab_nav {
+                display: flex;
+            }
+
+                /*导航块样式*/
+                .tab_contents .tab_nav li {
+                    padding: 10px 20px;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    background: #e5e9ea;
+                    margin-right: 2px;
+                    color: #607291;
+                    cursor: pointer;
+                    display: flex;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                    /*导航块图标*/
+                    .tab_contents .tab_nav li img {
+                        width: 20px;
+                        margin-right: 5px;
+                        opacity: 0.3;
+                        transition: opacity 0.3s;
+                    }
+
+                    /*设置导航块效果 */
+                    .tab_contents .tab_nav li:hover img {
+                        opacity: 1;
+                    }
+
+                    .tab_contents .tab_nav li h2 {
+                        font-size: 14px;
+                    }
+
+            .tab_contents .tabNav_active {
+                background: #f9f9f9 !important;
+            }
+
+                .tab_contents .tabNav_active img {
+                    opacity: 1 !important;
+                }
+
+            /*面板界面*/
+            .tab_contents .tab_box {
+                position: relative;
+                min-height: 150px;
+                padding: 2em;
+                color: #607291;
+                background: #f9f9f9;
+                box-shadow: 2px 2px 2px #5c5c5c;
+            }
+
+                /*面板块*/
+                .tab_contents .tab_box li {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex !important;
+                    align-items: center;
+                    padding: 15px;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.4s ease-in;
+                }
+
+                    /*面板图片*/
+                    .tab_contents .tab_box li img {
+                        width: 128px;
+                    }
+
+            /*设置面板过渡效果*/
+            .tab_contents .tabBox_active {
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            /*面板内容样式*/
+            .tab_contents .tab_box li div {
+                width: 100%;
+                height: 128px;
+                position: relative;
+                margin-left: 20px;
+            }
+
+            .tab_contents .tab_box li h2 {
+                position: absolute;
+                top: 0;
+            }
+
+            /*文本溢出隐藏效果*/
+            .tab_contents .tab_box li p {
+                margin-top: 40px;
+                line-height: 1.5em;
+                text-indent: 2em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3 ;
+                -webkit-box-orient: vertical;
+            }
+
+            .tab_contents .tab_box li button {
+                width: 110px;
+                height: 35px;
+                border: 1px solid #2196f3;
+                float: right;
+                cursor: pointer;
+                margin-top: 10px;
+                background: transparent;
+                outline: none;
+            }
+
+                .tab_contents .tab_box li button a {
+                    display: block;
+                    color: #2196f3;
+                    text-decoration: none;
+                }
+    </style>
+    <base target="_Blank">
+</head>
+<body>
+
+    <div class="tab_contents">
+        <!--导航条-->
+        <ul class="tab_nav">
+            <li class="tabNav_active">
+                <img alt="" src="../img/images/html.png">
+                <h2>HTML</h2>
+            </li>
+            <li>
+                <img alt="" src="../img/images/css.png">
+                <h2>CSS</h2>
+            </li>
+            <li>
+                <img alt="" src="../img/images/js.png">
+                <h2>JAVAScript</h2>
+            </li>
+            <li>
+                <img alt="" src="../img/images/vue.png">
+                <h2>Vue</h2>
+            </li>
+            <li>
+                <img alt="" src="../img/images/react.png">
+                <h2>React</h2>
+            </li>
+        </ul>
+        <!--面板区-->
+        <ul class="tab_box">
+            <li class="tabBox_active">
+                <img alt="" src="../img/images/html.png">
+                <div>
+                    <h2>HTML</h2>
+                    <p>
+                        HTML称为超文本标记语言，是一种标识性的语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字，图形、动画、声音、表格、链接等.
+                    </p>
+                    <button>
+                        <a href="https://baike.baidu.com/item/HTML/97049?fr=aladdin">Look at all ></a>
+                    </button>
+                </div>
+            </li>
+            <li>
+                <img alt="" src="../img/images/css.png">
+                <div>
+                    <h2>CSS</h2>
+                    <p>
+                        层叠样式表(英文全称：Cascading Style
+                        Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。
+                    </p>
+                    <button>
+                        <a href="https://baike.baidu.com/item/CSS/5457">Look at all ></a>
+                    </button>
+                </div>
+            </li>
+            <li>
+                <img alt="" src="../img/images/js.png">
+                <div>
+                    <h2>JAVAScript</h2>
+                    <p>
+                        JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的高级编程语言。虽然它是作为开发Web页面的脚本语言而出名的，但是它也被用到了很多非浏览器环境中，JavaScript
+                        基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。
+                    </p>
+                    <button>
+                        <a href="https://baike.baidu.com/item/javascript/321142?fromtitle=JS&fromid=10687961">
+                            Look at all
+                            >
+                        </a>
+                    </button>
+                </div>
+            </li>
+            <li>
+                <img alt="" src="../img/images/vue.png">
+                <div>
+                    <h2>Vue</h2>
+                    <p>
+                        Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式JavaScript框架。与其它大型框架不同的是，Vue
+                        被设计为可以自底向上逐层应用。Vue的核心库只关注视图层，方便与第三方库或既有项目整合。
+                    </p>
+                    <button>
+                        <a href="https://baike.baidu.com/item/Vue.js">Look at all ></a>
+                    </button>
+                </div>
+            </li>
+            <li>
+                <img alt="" src="../img/images/react.png">
+                <div>
+                    <h2>React</h2>
+                    <p>
+                        React 起源于 Facebook 的内部项目，因为该公司对市场上所有 JavaScript MVC
+                        框架，都不满意，就决定自己写一套，用来架设Instagram的网站。做出来以后，发现这套东西很好用，就在2013年5月开源了。
+                    </p>
+                    <button>
+                        <a href="https://baike.baidu.com/item/react/18077599?fr=aladdin">Look at all ></a>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var tabNavItem = document.querySelectorAll(".tab_nav>li");
+        var tabBoxItem = document.querySelectorAll(".tab_box>li");
+        /*选中部分*/
+        var tabNavActive = document.querySelector(".tabNav_active");
+        var tabBoxActive = document.querySelector(".tabBox_active");
+
+        /*
+        思路:
+        循环遍历导航条
+        点击导航条切换类名控制显示与隐藏
+        */
+
+        tabNavItem.forEach(function (item, index) {
+            item.onmouseenter = function () {
+                tabNavActive.className = "";
+                this.className = "tabNav_active";
+                tabNavActive = this;
+
+                tabBoxActive.className = "";
+                tabBoxItem[index].className = "tabBox_active";
+                tabBoxActive = tabBoxItem[index];
+            }
+        })
+    </script>
+
+
+</body>
+</html>

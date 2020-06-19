@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>鼠标经过滑动</title>
+    <style type="text/css">
+        *{
+            margin:0;
+        }
+        body{
+            background:black;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .box {
+            width: 800px;
+            height: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+        .box-zi {
+            width: 150px;
+            height: 100px;
+            background: yellow;
+            position: relative; /*定位属性-相对定位*/
+            overflow: hidden; /*溢出不显示*/
+            cursor: pointer; /*鼠标经过时光标*/
+        }
+            .box-zi:nth-child(2n) {
+                background: blue;
+            }
+            .box-zi:before {
+                content: "";
+                position: absolute; /*定位属性-绝对定位*/
+                top: 0px; /*当设置对立的2个定位属性时，元素的大小将由对立的大小决定*/
+                bottom: 0px;
+                left: 0px; /*当设置对立的2个定位属性时，元素的大小将由对立的大小决定*/
+                right: 0px;
+                background: black; /*背景颜色*/
+                opacity: 0; /*初始背景隐藏*/
+                transition: opacity 0.5s; /*鼠标经过动画*/
+            }
+            .box-zi:hover:before {
+                opacity: 0.6;   /*鼠标经过显示背景*/
+            }
+        .nei {
+            position: absolute; /*定位属性-绝对定位*/
+            top: 75%; /*当前文字位置-高*/
+            left: 5%; /*当前文字左边距*/
+            font-size: 16px; /*文字大小*/
+            line-height: 24px; /*文字行高*/
+            transition: top 0.5s; /*鼠标经过动画*/
+            color: white; /*文字颜色*/
+        }
+        .box-zi:hover .nei {
+            top: 0%; /*鼠标经过文字上移*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-zi">
+            <div class="nei">
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+            </div>
+        </div>
+        <div class="box-zi">
+            <div class="nei">
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+            </div>
+        </div>
+        <div class="box-zi">
+            <div class="nei">
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+            </div>
+        </div>
+        <div class="box-zi">
+            <div class="nei">
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+                我是文字我是文字<br />
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

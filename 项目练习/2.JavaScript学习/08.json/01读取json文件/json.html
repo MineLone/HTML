@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>读取json文件</title>
+  </head>
+  <body>
+    <ol id="ol"></ol>
+  </body>
+
+  <script>
+    //读取本地json文件
+    window.onload = function () {
+      var url = './data.json'
+      var request = new XMLHttpRequest()
+      request.open('get', url)
+      request.send(null)
+      request.onload = function () {
+        if (request.status == 200) {
+          var json = JSON.parse(request.responseText)
+          //console.log(json);
+        }
+
+        var ol = document.getElementById('ol')
+        json.list.map((list) => {
+          var li = document.createElement('li')
+          li.innerHTML = `标题： ${list.title} <br>
+                          库存： ${list.cfav} <br>
+                          价格： ${list.price} <br>
+                          <img src="${list.image}"/>`
+          ol.append(li)
+        })
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .div1, .div2, .div3 {
+            float: left;
+        }
+
+        .div1 {
+            width: 30px;
+            height: 80px;
+            background-color: red;
+        }
+
+        .div2 {
+            width: 200px;
+            height: 120px;
+            background-color: green;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+
+        .div3 {
+            width: 90px;
+            height: 120px;
+            background-color: yellow;
+        }
+
+        .div4 {
+            width: 500px;
+            height: 250px;
+            background-color: blue;
+        }
+
+        .y {
+            /*清除浮动-溢出*/
+            overflow:auto;
+        }
+        li {
+            clear: both;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="y">
+        <div class="div1">
+
+
+        </div>
+
+        <div class="div2">
+            asdassssssssssssssssssssssssssssss大事大所多ddd
+        </div>
+        <div class="div3">
+            /*清除浮动-溢出*/
+             清除浮动-溢出 
+
+        </div>
+    </div>
+    <div class="div4">
+
+    </div>
+    <ul>
+        <li style="float:left;">asdasd</li>
+        <li style="float:right;">asdasd</li>
+        <li style="float:left;">asdasd</li>
+        <li style="float:right;">asdaasdassd</li>
+        <li style="float:left;">asdasd</li>
+        <li style="float:right;">asdasdasd</li>
+        <li style="float:left;">asdasd</li>
+
+    </ul>
+</body>
+</html>

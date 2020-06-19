@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            border:solid 2px green;
+            overflow:hidden;
+        }
+        a {
+            float:left;
+            color:green;
+            text-decoration:none;
+        }
+            a:after {
+                content: '';
+                width: 1.8em;
+                height: 10px;
+                background: red;
+                position: relative;
+                left: 1.3em;
+                bottom: -5px;
+                display: none;
+            }
+        a:hover{
+            color: black;
+        }
+
+            a:hover:after{
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <h2><a href="#">首页首页</a></h2>
+    </div>
+    
+
+</body>
+</html>

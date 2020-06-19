@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script type="text/javascript">
+        /*
+         【JavaScript HTML DOM】
+
+         通过 HTML DOM，可访问 JavaScript HTML 文档的所有元素。
+
+         当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）。
+         HTML DOM 定义了用于 HTML 的一系列标准的对象，以及访问和处理 HTML 文档的标准方法。
+         通过 DOM，你可以访问所有的 HTML 元素，连同它们所包含的文本和属性。
+         HTML DOM 独立于平台和编程语言。它可被任何编程语言诸如 Java、JavaScript 和 VBScript 使用。
+        */
+        /*
+            【查找 HTML 元素】
+
+            1.通过 id 找到 HTML 元素      document.getElementById("元素id");
+            var x=document.getElementById("intro");
+
+            2.通过名称找到 HTML 元素    document.getElementsByName(元素name属性);
+            //本例查找 id="main" 的元素，然后查找 id="main" 元素中的所有 <p> 元素：
+            var x=document.getElementById("main");
+            var y=x.getElementsByTagName("p");
+
+            3.通过标签名找到 HTML 元素      document.getElementsByTagName(元素标签);  返回一个装有符合条件的元素节点数组
+            var x=document.getElementsByClassName("intro");
+
+            4.通过标签名找到 HTML 元素      document.getElementsByClassName(类名)     返回文档中所有指定类名的元素集合
+            var x=document.getElementsByClassName(classname);                        【注】在低版本的IE浏览器不支持
+            //  封装函数解决兼容
+            //  *通配符    任意类型的元素节点
+            function elementByClassName(parent,classStr) {
+                //1.找到parent下所有的元素节点
+                var nodes = parent.getElementsByTagName('*');
+                var result = [];    //用记录符合条件的元素节点
+                for (var i = 0; i < nodes.length; i++) {
+                    //2.如果符合条件，添加到数组中
+                    if (nodes[i].className == classStr) {
+                        result.push(nodes[i]);
+                    }
+                }
+                return result;
+            }
+
+        */
+        /*  【访问节点属性】
+         *   元素节点.属性名
+         *   例如：
+         *   var x=document.getElementById("intro");
+         *   alert(x.id);
+         *   alert(x.title);
+         *   alert(x.className);            类需要注意
+         *   alert(x.style);                样式有多种 可以单独进行访问  
+         *   --------------以上操作只能找到行间的CSS样式-----------
+         *   
+         *   【注】获取当前有效样式
+         *   getComputedStyle(元素节点)[获取的样式类型]
+         *   getComputedStyle(x)["width"];  //火狐/谷歌/safari支持
+         *   
+         *   元素节点.currentStyle[获取样式类型]; //IE
+         *   
+         *   例：alert(x.style.width);
+         *   x.style.width = "400px";       或者可以直接赋值
+         *   使用-连接的属性 访问的时候讲-去掉 然后将后续字母首字母大写
+         *   如  font-size   访问时变成   x.style.fontSize
+         *   
+         *   //element.tagName              作为一个字符串返回某个元素的标记名(大写)       返回标签名           .tagName
+         *   //element.innerHTML            设置或者返回元素的内容。                       返回标签内的内容     .innerHTML
+         *  
+        */
+
+
+        window.onload = function () {
+            var oUl = document.getElementById("ull")
+            var nodes = elementByClassName(oUl, "box")
+            
+            for (var i = 0; i < nodes.length; i++) {
+                alert(nodes[i].innerHTML);
+            }
+        }
+    </script>
+    <style>
+        *{
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="ull">
+        <li>1111111</li>
+        <li class="box">222222</li>
+        <li>333333</li>
+        <li class="box">44444</li>
+    </ul>
+    <ol id="oll">
+        <li>555</li>
+        <li class="box">666</li>
+        <li>777</li>
+        <li class="box">8888</li>
+    </ol>
+</body>
+</html>

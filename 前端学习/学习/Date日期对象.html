@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Date日期对象</title>
+    <script type="text/javascript">
+        /*
+        //Date 对象用于处理日期与时间。
+
+        无参数时 默认系统当前时间
+
+        创建 Date 对象
+        var d = new Date();//Fri May 22 2020 16:56:06 GMT+0800 (中国标准时间)
+        alert(d);
+
+        //参数类型可以是：
+
+        1.Date("2015/05/22")
+        2.Date("2015-05-22")
+        3.Date(2016,04,13,16,35)
+        4.var d =new Date(milliseconds);//返回从 1970 年 1 月 1 日至今的毫秒数
+
+        var d =new Date();//无参数
+        var d =new Date(dateString);
+        var d =new Date(year, month, day, hours, minutes, seconds, milliseconds);
+
+
+        Date 对象属性
+        constructor	返回对创建此对象的 Date 函数的引用。
+        prototype	使您有能力向对象添加属性和方法。
+
+        Date 对象方法   
+        //set系列的函数是设置值
+        //get系列的函数是获取值
+
+        getDate()	从 Date 对象返回一个月中的某一天 (1 ~ 31)。
+        getDay()	从 Date 对象返回一周中的某一天 (0 ~ 6)。
+        getFullYear()	从 Date 对象以四位数字返回年份。
+        getHours()	返回 Date 对象的小时 (0 ~ 23)。
+        getMilliseconds()	返回 Date 对象的毫秒(0 ~ 999)。
+        getMinutes()	返回 Date 对象的分钟 (0 ~ 59)。
+        getMonth()	从 Date 对象返回月份 (0 ~ 11)。
+        getSeconds()	返回 Date 对象的秒数 (0 ~ 59)。
+        getTime()	返回 1970 年 1 月 1 日至今的毫秒数。
+        getTimezoneOffset()	返回本地时间与格林威治标准时间 (GMT) 的分钟差。
+        getUTCDate()	根据世界时从 Date 对象返回月中的一天 (1 ~ 31)。
+        getUTCDay()	根据世界时从 Date 对象返回周中的一天 (0 ~ 6)。
+        getUTCFullYear()	根据世界时从 Date 对象返回四位数的年份。
+        getUTCHours()	根据世界时返回 Date 对象的小时 (0 ~ 23)。
+        getUTCMilliseconds()	根据世界时返回 Date 对象的毫秒(0 ~ 999)。
+        getUTCMinutes()	根据世界时返回 Date 对象的分钟 (0 ~ 59)。
+        getUTCMonth()	根据世界时从 Date 对象返回月份 (0 ~ 11)。
+        getUTCSeconds()	根据世界时返回 Date 对象的秒钟 (0 ~ 59)。
+        getYear()	已废弃。 请使用 getFullYear() 方法代替。
+        parse()	返回1970年1月1日午夜到指定日期（字符串）的毫秒数。
+        setDate()	设置 Date 对象中月的某一天 (1 ~ 31)。
+        setFullYear()	设置 Date 对象中的年份（四位数字）。
+        setHours()	设置 Date 对象中的小时 (0 ~ 23)。
+        setMilliseconds()	设置 Date 对象中的毫秒 (0 ~ 999)。
+        setMinutes()	设置 Date 对象中的分钟 (0 ~ 59)。
+        setMonth()	设置 Date 对象中月份 (0 ~ 11)。
+        setSeconds()	设置 Date 对象中的秒钟 (0 ~ 59)。
+        setTime()	setTime() 方法以毫秒设置 Date 对象。
+        setUTCDate()	根据世界时设置 Date 对象中月份的一天 (1 ~ 31)。
+        setUTCFullYear()	根据世界时设置 Date 对象中的年份（四位数字）。
+        setUTCHours()	根据世界时设置 Date 对象中的小时 (0 ~ 23)。
+        setUTCMilliseconds()	根据世界时设置 Date 对象中的毫秒 (0 ~ 999)。
+        setUTCMinutes()	根据世界时设置 Date 对象中的分钟 (0 ~ 59)。
+        setUTCMonth()	根据世界时设置 Date 对象中的月份 (0 ~ 11)。
+        setUTCSeconds()	setUTCSeconds() 方法用于根据世界时 (UTC) 设置指定时间的秒字段。
+        setYear()	已废弃。请使用 setFullYear() 方法代替。
+        toDateString()	把 Date 对象的日期部分转换为字符串。
+        toGMTString()	已废弃。请使用 toUTCString() 方法代替。
+        toISOString()	使用 ISO 标准返回字符串的日期格式。
+        toJSON()	以 JSON 数据格式返回日期字符串。
+        toLocaleDateString()	根据本地时间格式，把 Date 对象的日期部分转换为字符串。
+        toLocaleTimeString()	根据本地时间格式，把 Date 对象的时间部分转换为字符串。
+        toLocaleString()	据本地时间格式，把 Date 对象转换为字符串。
+        toString()	把 Date 对象转换为字符串。
+        toTimeString()	把 Date 对象的时间部分转换为字符串。
+        toUTCString()	根据世界时，把 Date 对象转换为字符串。
+        UTC()	根据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数。
+        valueOf()	返回 Date 对象的原始值。
+        */
+        //var d = new Date(1000);
+        //alert(d);
+
+        /*
+        //-----------显示一个钟表------------------
+
+        var myVar = setInterval(function () { myTimer() }, 1000);
+
+        function myTimer() {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("demo").innerHTML = t;
+        }    
+        window.onload = function tz() {
+            var aj = document.getElementById("an");
+            aj.onclick = function () {
+                alert(myVar);
+                //clearInterval(myVar);   //停止
+            }
+        }
+
+        */
+        /*
+        
+        var a = 10;
+        var L = a + '%'
+        alert(a + '%');
+        alert(typeof L);
+
+        */
+
+        /*
+        
+        //写一个秒表
+
+        */
+        //用于读取ID
+        function $(id) {
+            return document.getElementById(id);
+
+        }
+        //处理单个数据
+        function Num(num) {
+            if(num < 10) {
+                return "0" + num;
+            }else {
+                return num;
+            }
+        }
+
+        window.onload = function () {
+            var add = 0;//定义一个初始量 用于累加的秒数
+            var timer = 0;
+            //注册按键消息
+            $("K").onclick = function () {
+                if (timer != 0) {
+                    alert("己经开始了！");
+                    clearInterval(timer);
+                    timer = setInterval(function () {
+                        add++;
+                        $("S").innerHTML = Num(add % 60);
+                        $("M").innerHTML = Num(parseInt(add / 60) % 60);
+                        $("H").innerHTML = Num(parseInt(add / 3600) % 60);
+
+                    }, 10);
+                } else {
+                    alert("开始");
+                    timer = setInterval(function () {
+                        add++;
+                        $("S").innerHTML = Num(add % 60);
+                        $("M").innerHTML = Num(parseInt(add / 60) % 60);
+                        $("H").innerHTML = Num(parseInt(add / 3600) % 60);
+
+                    }, 10);
+                }
+            }
+            $("Z").onclick = function () {
+                alert("暂停");
+                //清除循环
+                clearInterval(timer);
+                timer = 0;
+            }
+            $("T").onclick = function () {
+                alert("停止");
+                clearInterval(timer);
+                //清零
+                add = 0;
+                $("S").innerHTML = "00";
+                $("M").innerHTML = "00";
+                $("H").innerHTML = "00";
+                timer = 0;
+            }
+
+        }
+    </script>
+    <style type="text/css">
+        *{
+            margin:0;
+            border:none;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+        }
+        div#miaobiao {
+            width: 450px;
+            height: 500px;
+            margin: 5% auto 20%;
+            background-color: #177cb0;
+            border: none;
+            overflow: hidden;
+            text-align: center;
+        }
+            div#miaobiao:first-line {
+                color: yellow;
+                font-size: 30px;
+                line-height:1.8em;
+            }
+        div#xianshiqi {
+            width: 80%;
+            height: 200px;
+            margin: 5px auto 30px;
+            background: #a1afc9;
+            overflow: hidden;
+            font-size: 50px;
+            line-height: 200px;
+        }
+        span.MH {
+            text-align: center;
+            
+        }
+        input {
+            width:80%;
+            height:50px;
+            margin:0 auto;
+            
+        }
+        input#Z{
+            margin:20px 0px;
+        }
+    </style>
+</head>
+<body>
+    <!--<p>显示当前时间:</p>
+    <p id="demo">这里是时间</p>
+    <input type="button" id="an" value="tingzhi" />-->
+
+    <div id="miaobiao">
+        <span>简单计时器</span>
+        <div id="xianshiqi">
+            <span id="H">00</span>
+            <span class="MH">:</span>
+            <span id="M">00</span>
+            <span class="MH">:</span>
+            <span id="S">00</span>
+        </div>
+        <input type="button" id="K" value="开始" />
+        <input type="button" id="Z" value="暂停" />
+        <input type="button" id="T" value="停止" />
+    </div>
+
+</body>
+</html>

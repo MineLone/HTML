@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>循环</title>
+    <script type="text/javascript">
+
+
+        /* while循环
+         【格式】
+         while(表达式){
+            循环语句
+         }
+         1.先判断表达式 表达式成立执行循环语句
+         2.循环变量要初始化
+         3.循环体中要有结束循环的条件，否则会造成死循环
+         4.循环体中可以写若干合法JS代码 包括 if 等
+         */
+
+        /* 【do while循环】
+        do {
+            循环语句
+        } while ( 表达式 );
+
+        先执行循环语句，然后判断是否循环
+        */
+        
+        //var i = 1;
+        //var h = null;
+        //while ( i <=100 ) {
+        //    h = h + i;
+        //    i++;
+        //}
+        //alert(h);
+        //-----------------------------------------------
+        //练习题
+        
+
+        
+
+        //打印100以内7的倍数
+        //var i = 1;
+        //var p = "100以内7的倍数有：";
+        //while (i <= 100) {
+        //    if (i % 7 == 0) {
+        //        p += i;
+        //        p += "，"
+        //    };
+        //    i++;
+        //}
+        //alert(p);
+
+        //var i = 1;
+        //while (i <= 100) {
+        //    if (i % 7 == 0) {
+        //        document.write(i + "<br/>");
+        //    } else {
+        //        p = p
+        //    };
+        //    i++;
+        //}
+
+        //打印100以内的奇数
+        /*
+         * i = 1;
+        while (i <= 100) {
+            switch (i % 2) {
+                case 1:
+                    document.write(i + "，");
+                    break;
+                case 0:
+                    break;
+                default:
+                    document.write("error");
+                    break;
+            }
+            i++;
+        };
+        var i = 1;
+        while (i <= 100) {
+            if (i % 0 != 0) {
+                document.write(i + "," );
+            };
+            i++;
+        }
+        */
+        //打印100以内所有偶数的和
+        //var i = 1;
+        //var h = 0
+        //var j = 0;
+        //while (i <= 100) {
+        //    switch (i % 2) {
+        //        case 0:
+        //            h += i
+        //            break;
+        //        case 1:
+        //            j += i
+        //            break;
+        //        default:
+        //            document.write("error");
+        //            break;
+        //    }
+        //    i++;
+        //};
+        //var q = 1;
+        //var z = 0;
+
+        //while (q <= 100) {
+        //    z += q;
+        //    q++;
+        //};
+        //document.write("100以内所有偶数的和为:" + h + "<br/>");
+        //document.write("100以内所有奇数的和为:" + j + "<br/>");
+        //document.write("100以内所有数的和为:" + z + "<br/>");
+        /*
+         打印图形
+        *   *  **  ******
+        ****  ******** **
+        * ** * * * **  **
+        */
+
+        /* 【for 循环】使用较多
+        【格式】
+            for (表达式1;表达式2;表达式3){
+                循环语句
+            }
+        【执行顺序】
+            1.先求解表达式1（只求一次）
+            2.求解表达式2，若其值为真（非0）
+            则执行for语句中的循环语句，然后再去求解表达式3；
+            在求解表达式2，若为假，则结束循环。
+        【注】
+            三个循环都可以省略 但是分号不能省略
+        【补充】
+            break语句  可以跳出循环
+            continue语句 使本次循环语句结束 然后进行循环判断
+        */
+        /*
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        };
+        alert(sum);
+        */
+        //第一次循环判定几行
+        /*
+        var o = 10;
+        for (var i = 0; i < o; i++) {
+            //每行几个
+            for (var k = o-1; k > i; k--) {
+
+                document.write("&emsp;")
+            }
+            for (var j = 0; j <= 2*i;  j++) {
+                
+                document.write("塔")
+            }
+            
+            document.write("<br/>")
+        }
+        */
+        /*
+                           塔
+                    塔塔塔
+                   塔塔塔塔塔
+                  塔塔塔塔塔塔塔
+                 塔塔塔塔塔塔塔塔塔
+                塔塔塔塔塔塔塔塔塔塔塔
+               塔塔塔塔塔塔塔塔塔塔塔塔塔
+              塔塔塔塔塔塔塔塔塔塔塔塔塔塔塔
+             塔塔塔塔塔塔塔塔塔塔塔塔塔塔塔塔塔
+            塔塔塔塔塔塔塔塔塔塔塔塔塔塔塔塔塔塔塔
+         */
+    </script>
+    <style type="text/css">
+        html , body {
+            margin:0 auto;
+            width: 100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
